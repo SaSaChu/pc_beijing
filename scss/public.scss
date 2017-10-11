@@ -29,7 +29,12 @@
 }
 
 
-
+.icon-an:before {
+  content: "\e908";
+}
+.icon-qu:before {
+  content: "\e909";
+}
 .icon-time:before {
   content: "\e907";
 }
@@ -414,6 +419,27 @@ $cent_gray: rgba(150, 150, 150, 1.00);
 
         .cent_top_L {
           float: left;
+
+          &.vo_all {
+            width: 100%;
+            margin-bottom: 10px;
+
+            @include range-width(769px, 1306px) {
+              height: 20px;
+              margin-bottom: 7px;
+            }
+          }
+
+          &.vo_L {
+            width: 50%;
+            margin-bottom: 10px;
+
+            @include range-width(769px, 1306px) {
+              width: 100%;
+              height: 25px;
+              margin-bottom: 4px;
+            }
+          }
         }
 
         .cent_top_R {
@@ -484,6 +510,7 @@ $cent_gray: rgba(150, 150, 150, 1.00);
             display: inline-block;
             width: 100%;
             cursor: pointer;
+            margin-bottom: 50px;
 
             &:hover, &:active {
               .gray_boxs {
@@ -529,7 +556,7 @@ $cent_gray: rgba(150, 150, 150, 1.00);
               width: 100%;
               font-size: 1rem;
               color: $cent_gray;
-              padding-top: 10px;
+              padding-top: 8px;
               @include transition(all .3s);
             }
           }
