@@ -239,17 +239,20 @@ $cent_gray: rgba(150, 150, 150, 1.00);
           height: 50px;
           line-height: 50px;
         }
+
+        + * {
+          height: calc(100% - 65px);
+
+          @include range-width(769px, 1240px) {
+            height: calc(100% - 50px);
+          }
+        }
       }
 
       .catalog_content_boxs {
         display: inline-block;
-        width: 100%;
-        height: calc(100% - 65px);
+        width: 100%;        
         padding-bottom: 15px;
-
-        @include range-width(769px, 1240px) {
-          height: calc(100% - 50px);
-        }
 
         .catalog_content_box {
           display: inline-block;
@@ -387,8 +390,24 @@ $cent_gray: rgba(150, 150, 150, 1.00);
         padding-right: 135px;
         @include clearfix();
 
+        + * {
+          height: calc(100% - 50px);
+
+          @include range-width(901px, 1240px) {
+            height: calc(100% - 80px);
+          }
+
+          @include range-width(769px, 901px) {
+            height: calc(100% - 80px);
+          }
+        }
+
         &.im_top_height {
           height: 100px;
+
+          + * {
+            height: calc(100% - 100px);
+          }
         }
 
         @include range-width(901px, 1240px) {
@@ -451,19 +470,6 @@ $cent_gray: rgba(150, 150, 150, 1.00);
 
       .cent_down_boxs {
         @include clearfix();
-        height: calc(100% - 50px);
-
-        &.im_down_height {
-          height: calc(100% - 100px);
-        }
-
-        @include range-width(901px, 1240px) {
-          height: calc(100% - 80px);
-        }
-
-        @include range-width(769px, 901px) {
-          height: calc(100% - 80px);
-        }
 
         .cent_down_L, .cent_down_R {
           display: inline-block;
