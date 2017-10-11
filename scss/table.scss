@@ -1,0 +1,106 @@
+/**
+ * @author      ZEUS Design - http://www.zeusdesign.com.tw
+ * @copyright   Copyright (c) 2016 ZEUS Design
+ */
+
+@import "_oa";
+
+
+$light_blue: rgba(13, 92, 163, 1.00);
+$deep_blue: rgba(30, 49, 80, 1.00);
+$light_gray: rgba(232, 232, 232, 1.00);
+$deep_gray: rgba(73, 73, 73, 1.00);
+
+
+.table_box {
+  display: inline-block;
+  width: 100%;
+
+  .table {
+    display: table;
+    width: 100%;
+
+    .tr {
+      display: table-row;
+      @include clearfix();
+      text-align: left;
+
+      &:nth-child(2n + 2) {
+        background-color: rgba(209, 209, 209, 1.00);
+      }
+      
+      .td {
+        display: table-cell;
+        font-size: 1.3rem;
+        color: $light_gray;
+        padding: 15px 0;
+
+        @include range-width(891px, 1111px) {
+          font-size: 1rem;
+        }
+
+        @include range-width(769px, 891px) {
+          font-size: .9rem;
+        }
+
+        p {
+          display: inline-block;
+          padding: 0;
+          margin: 0;
+          font-size: 1.3rem;
+          color: black;
+          padding: 0 10px;
+
+          @include range-width(891px, 1111px) {
+            font-size: 1rem;
+          }
+
+          @include range-width(769px, 891px) {
+            font-size: .9rem;
+          }
+        }
+
+        // &:nth-child(1) {
+        //   width: 200px;
+        //   background-color: rgba(0, 0, 255, 0.2);
+        // }
+
+        // &:nth-child(3) {
+        //   width: 150px;
+        // }
+
+      }
+
+      &:first-child { // 第一行的 tr
+        
+        .td {
+          position: relative;
+
+          &:before {
+            display: inline-block;
+            content: attr(title);
+            width: 100%;
+            margin-top: -15px;
+            margin-bottom: 15px;
+            color: white;
+            padding: 15px;
+            font-size: 1.2rem;
+            background-color: $deep_blue;
+
+            @include range-width(891px, 1111px) {
+              font-size: 1rem;
+            }
+
+            @include range-width(769px, 891px) {
+              font-size: .9rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+
+

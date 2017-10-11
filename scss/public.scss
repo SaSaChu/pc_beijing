@@ -153,7 +153,7 @@ $deep_gray: rgba(73, 73, 73, 1.00);
       @include range-width(769px, 1441px) {
         height: 60px;
         line-height: 60px;
-        margin-bottom: 10px;
+        margin-bottom: 7px;
       }
       
       background-color: $light_gray;
@@ -250,25 +250,98 @@ $deep_gray: rgba(73, 73, 73, 1.00);
           width: 100%;
           height: 100%; // 不動，要設定滾軸，在下一層。
 
-          // .test1 {
-          //   display: inline-block;
-          //   height: 50px;
-          //   background-color: $deep_gray;
-          // }
-          // .test2 {
-          //   display: inline-block;
-          //   overflow-y: scroll; 
-          //   height: calc(100% - 50px);
-          // }
+          // 條狀式目錄
+          .ca_deta_boxs {
+            display: inline-block;
+            width: 100%;
+            padding-left: 30px;
+            @include clearfix();
+
+            @include range-width(901px, 1240px) {
+              padding-left: 20px;
+            }
+
+            @include range-width(769px, 901px) {
+              padding-left: 15px;
+            }
+
+            .ca_list_span {
+              display: inline-block;
+              width: 100%;
+              height: 15px;
+              float: left;
+              border-left: 1px solid $deep_blue;
+            }
+
+            .ca_list_boxs {
+              display: inline-block;
+              width: 100%;
+              float: left;
+              text-align: left;
+              @include clearfix();
+
+              &:before {
+                display: inline-block;
+                content: '';
+                height: 37px;
+                border-left: 1px solid $deep_blue;
+              }
+
+              &:last-child {
+                &:before {
+                  display: inline-block;
+                  content: '';
+                  height: 19px;
+                  border-left: 1px solid $deep_blue;
+                }
+              }
+
+              a {
+                display: inline-block;
+                cursor: pointer;
+                padding: 5px 0;
+                text-overflow: ellipsis;
+                
+                white-space : nowrap;
+                width: 90%;
+                overflow : hidden;
+
+                font-size: 1.2rem;
+                color: black;
+                text-decoration: none;
+                @include transition(color .3s);
+
+                &:hover, &:active {
+                  color: $deep_blue;
+                } 
+
+                &:before {
+                  display: inline-block;
+                  content: '─';
+                  color: $deep_blue;
+                  margin-right: 5px;
+                }
+
+                &.ca_ac {
+                  color: $deep_blue;
+                }
+              }
+            }
+          }
         }
       }      
     }
+
 
     // 右邊：中間
     .cent_boxs {
       width: calc(100% - 335px - 15px);
       height: 100%;
       padding: 10px;
+
+      &.no_pa {
+        padding: 0;
+      }
 
       @include range-width(901px, 1240px) {
         width: calc(100% - 300px - 10px);
@@ -299,21 +372,15 @@ $deep_gray: rgba(73, 73, 73, 1.00);
           padding-right: 0;
         }
 
-        // delete
-        background-color: rgba(255, 0, 0, 0.2);
-
         .cent_top_L, .cent_top_R {
           display: inline-block;
           width: 50%;
+          height: 50px;
 
           @include range-width(769px, 1240px) {
             width: 100%;
             height: 40px;
           }
-
-          // delete
-          height: 50px;
-          border: 1px solid rgba(255, 0, 0, .3);
         }
 
         .cent_top_L {
@@ -337,9 +404,6 @@ $deep_gray: rgba(73, 73, 73, 1.00);
           height: calc(100% - 80px);
         }
 
-        // delete
-        background-color: rgba(0, 0, 255, 0.2);
-
         .cent_down_L, .cent_down_R {
           display: inline-block;
           float: left;
@@ -356,9 +420,6 @@ $deep_gray: rgba(73, 73, 73, 1.00);
           @include range-width(769px, 901px) {
             width: calc(100% - 80px);
           }
-
-          // delete
-          background-color: rgba(255, 0, 0, 0.2);
         }
 
         .cent_down_R {
@@ -372,26 +433,29 @@ $deep_gray: rgba(73, 73, 73, 1.00);
           @include range-width(769px, 901px) {
             width: 80px;
           }
-
-          // delete
-          background-color: rgba(0, 128, 0, 0.2);
         }
       }
 
       // 全版用
       .cent_content_box {
         height: 100%;
+        overflow-y: scroll; 
 
-        // delete
-        background-color: rgba(0, 128, 0, 0.2);
+        &.ac_cent_span {
+          padding: 0 100px;
+
+          @include range-width(1146px, 1441px) {
+            padding: 0 80px;
+          }
+
+          @include range-width(769px, 1146px) {
+            padding: 0 30px;
+          }
+
+        }
       }
-
-      // delete
-      background-color: rgba(0, 0, 255, 0.2);
     }
   }
-
-
 }
 
 
