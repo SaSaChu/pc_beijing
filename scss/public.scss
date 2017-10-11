@@ -251,6 +251,24 @@ $cent_gray: rgba(150, 150, 150, 1.00);
           width: 100%;
           height: 100%; // 不動，要設定滾軸，在下一層。
 
+          .vo_date_boxs {
+            display: inline-block;
+            width: 100%;
+            padding: 20px;
+            text-align: left;
+
+            height: 100%;
+            overflow-y: scroll; 
+
+            @include range-width(1100px, 1240px) {
+              padding: 15px;
+            }
+
+            @include range-width(769px, 1100px) {
+              padding: 10px;
+            }
+          }
+
           // 條狀式目錄
           .ca_deta_boxs {
             display: inline-block;
@@ -359,6 +377,7 @@ $cent_gray: rgba(150, 150, 150, 1.00);
 
 
       .cent_top_boxs {
+        padding: 10px 0;
         height: 50px;
         padding-right: 135px;
         @include clearfix();
@@ -386,7 +405,6 @@ $cent_gray: rgba(150, 150, 150, 1.00);
         .cent_top_L, .cent_top_R {
           display: inline-block;
           width: 50%;
-          height: 50px;
 
           @include range-width(769px, 1240px) {
             width: 100%;
@@ -444,7 +462,7 @@ $cent_gray: rgba(150, 150, 150, 1.00);
             height: 100%;
             background-color: white;
             overflow-y: scroll; 
-            padding-top: 15px; 
+            padding: 15px 10px; 
           }
         }
 
@@ -468,6 +486,16 @@ $cent_gray: rgba(150, 150, 150, 1.00);
             cursor: pointer;
 
             &:hover, &:active {
+              .gray_boxs {
+                background-color: $deep_blue;
+              }
+
+              span {
+                color: $deep_blue;
+              }
+            }
+
+            &.gray_ac {
               .gray_boxs {
                 background-color: $deep_blue;
               }
