@@ -116,9 +116,6 @@ $deep_gray: rgba(73, 73, 73, 1.00);
     width: 125px;
     @include clearfix();
 
-    // delete
-    border: 1px solid rgba(255, 0, 0, .3);
-
     .close_boxs {
       display: inline-block;
       width: 50px;
@@ -197,7 +194,7 @@ $deep_gray: rgba(73, 73, 73, 1.00);
     position: relative;
 
 
-    .catalog_boxs, .content_boxs {
+    .catalog_boxs, .cent_boxs {
       display: inline-block;
       float: left;
     }
@@ -211,13 +208,183 @@ $deep_gray: rgba(73, 73, 73, 1.00);
       position: absolute;
       top: -5px;
       right: 0;
+
+      @include range-width(901px, 1240px) {
+        width: 300px;
+        margin-right: 10px;
+      }
+
+      @include range-width(769px, 901px) {
+        width: 250px;
+        margin-right: 10px;
+      }
+
+      .catalog_title {
+        display: inline-block;
+        width: 100%;
+        height: 65px;
+        line-height: 65px;
+        background-color: $deep_blue;
+        font-size: 2rem;
+        color: white;
+
+        @include range-width(769px, 1240px) {
+          font-size: 1.5rem;
+          height: 50px;
+          line-height: 50px;
+        }
+      }
+
+      .catalog_content_boxs {
+        display: inline-block;
+        width: 100%;
+        height: calc(100% - 65px);
+        padding-bottom: 15px;
+
+        @include range-width(769px, 1240px) {
+          height: calc(100% - 50px);
+        }
+
+        .catalog_content_box {
+          display: inline-block;
+          width: 100%;
+          height: 100%; // 不動，要設定滾軸，在下一層。
+
+          // .test1 {
+          //   display: inline-block;
+          //   height: 50px;
+          //   background-color: $deep_gray;
+          // }
+          // .test2 {
+          //   display: inline-block;
+          //   overflow-y: scroll; 
+          //   height: calc(100% - 50px);
+          // }
+        }
+      }      
     }
 
     // 右邊：中間
-    .content_boxs {
+    .cent_boxs {
       width: calc(100% - 335px - 15px);
       height: 100%;
       padding: 10px;
+
+      @include range-width(901px, 1240px) {
+        width: calc(100% - 300px - 10px);
+      }
+
+      @include range-width(769px, 901px) {
+        width: calc(100% - 250px - 10px);
+      }
+
+      .cent_top_boxs, .cent_down_boxs, .cent_content_box {
+        display: inline-block;
+        width: 100%;
+      }
+
+
+      .cent_top_boxs {
+        height: 50px;
+        padding-right: 135px;
+        @include clearfix();
+
+        @include range-width(901px, 1240px) {
+          height: 80px;
+          padding-right: 100px;
+        }
+
+        @include range-width(769px, 901px) {
+          height: 80px;
+          padding-right: 0;
+        }
+
+        // delete
+        background-color: rgba(255, 0, 0, 0.2);
+
+        .cent_top_L, .cent_top_R {
+          display: inline-block;
+          width: 50%;
+
+          @include range-width(769px, 1240px) {
+            width: 100%;
+            height: 40px;
+          }
+
+          // delete
+          height: 50px;
+          border: 1px solid rgba(255, 0, 0, .3);
+        }
+
+        .cent_top_L {
+          float: left;
+        }
+
+        .cent_top_R {
+          float: right;
+        }
+      }
+
+      .cent_down_boxs {
+        @include clearfix();
+        height: calc(100% - 50px);
+
+        @include range-width(901px, 1240px) {
+          height: calc(100% - 80px);
+        }
+
+        @include range-width(769px, 901px) {
+          height: calc(100% - 80px);
+        }
+
+        // delete
+        background-color: rgba(0, 0, 255, 0.2);
+
+        .cent_down_L, .cent_down_R {
+          display: inline-block;
+          float: left;
+        }
+
+        .cent_down_L {
+          width: calc(100% - 135px);
+          height: 100%; // 不動，要設定滾軸，在下一層。
+
+          @include range-width(901px, 1240px) {
+            width: calc(100% - 100px);
+          }
+
+          @include range-width(769px, 901px) {
+            width: calc(100% - 80px);
+          }
+
+          // delete
+          background-color: rgba(255, 0, 0, 0.2);
+        }
+
+        .cent_down_R {
+          width: 135px;
+          height: 100%;
+
+          @include range-width(901px, 1240px) {
+            width: 100px;
+          }
+
+          @include range-width(769px, 901px) {
+            width: 80px;
+          }
+
+          // delete
+          background-color: rgba(0, 128, 0, 0.2);
+        }
+      }
+
+      // 全版用
+      .cent_content_box {
+        height: 100%;
+
+        // delete
+        background-color: rgba(0, 128, 0, 0.2);
+      }
 
       // delete
       background-color: rgba(0, 0, 255, 0.2);
@@ -226,6 +393,7 @@ $deep_gray: rgba(73, 73, 73, 1.00);
 
 
 }
+
 
 
 
