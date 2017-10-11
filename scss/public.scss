@@ -1,0 +1,271 @@
+/**
+ * @author      ZEUS Design - http://www.zeusdesign.com.tw
+ * @copyright   Copyright (c) 2016 ZEUS Design
+ */
+
+@import "_oa";
+
+@include font-face("Monaco", font-files("monaco/monaco.ttf", "monaco/monaco.otf"));
+@include font-face("icomoon", font-files("icomoon/icomoon.eot", "icomoon/icomoon.woff", "icomoon/icomoon.ttf", "icomoon/icomoon.svg"));
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon', Monaco, "微軟正黑體", "Microsoft JhengHei";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  @include font-smoothing(antialiased);
+}
+
+* {
+  &, &:after, &:before {
+    vertical-align: top;
+    @include box-sizing(border-box);
+    @include selection(rgba(150, 200, 255, 1), rgba(255, 255, 255, 1));
+    @include font-smoothing(antialiased);
+  }
+}
+
+
+
+.icon-time:before {
+  content: "\e907";
+}
+.icon-reload:before {
+  content: "\e906";
+}
+.icon-hand:before {
+  content: "\e905";
+}
+.icon-chevron-down:before {
+  content: "\e900";
+}
+.icon-chevron-left:before {
+  content: "\e901";
+}
+.icon-chevron-right:before {
+  content: "\e902";
+}
+.icon-chevron-up:before {
+  content: "\e903";
+}
+.icon-close:before {
+  content: "\e5cd";
+}
+.icon-dehaze:before {
+  content: "\e3c7";
+}
+.icon-dash:before {
+  content: "\f0ca";
+}
+.icon-plus:before {
+  content: "\f05d";
+}
+.icon-search:before {
+  content: "\e904";
+}
+
+
+
+html {
+  height: 100%;
+
+  body {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;  /* 1*12px=12px */
+    font-family: "Roboto", "微軟正黑體", Monaco, "Microsoft JhengHei" ;
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+
+    @include font-smoothing(antialiased);
+
+  }
+}
+
+
+$light_blue: rgba(13, 92, 163, 1.00);
+$deep_blue: rgba(30, 49, 80, 1.00);
+$light_gray: rgba(232, 232, 232, 1.00);
+$deep_gray: rgba(73, 73, 73, 1.00);
+
+
+// 最外圈的div
+#out_boxs {
+  display: inline-block;
+  width: 95vw;
+  height: 100vh;
+  margin:0 auto;
+  padding: 55px 0;
+  @include clearfix();
+
+  .Left_boxs, .Right_boxs {
+    display: inline-block;
+    height: 100%;
+    float: left;
+  }
+  
+  // 左邊
+  .Left_boxs {
+    width: 125px;
+    @include clearfix();
+
+    // delete
+    border: 1px solid rgba(255, 0, 0, .3);
+
+    .close_boxs {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      background-color: $deep_gray;
+      float: right;
+      margin: 5px 0 35px 0;
+      font-size: 3rem;
+      color: white;
+      text-decoration: none;
+      @include transition(background-color .3s);
+      cursor: pointer;
+
+      &:hover, &:active {
+        background-color: $light_blue;
+      }
+
+      @include range-width(769px, 1441px) {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        margin: 5px 0 25px 0;
+        font-size: 2rem;
+      }
+    }
+
+    .nav_boxs {
+      display: inline-block;
+      width: 100%;
+      height: 75px;
+      line-height: 75px;
+      margin-bottom: 5px;
+
+      @include range-width(769px, 1441px) {
+        height: 60px;
+        line-height: 60px;
+        margin-bottom: 10px;
+      }
+      
+      background-color: $light_gray;
+      -webkit-border-top-left-radius: 40px;
+      -webkit-border-bottom-left-radius: 40px;
+      -moz-border-radius-topleft: 40px;
+      -moz-border-radius-bottomleft: 40px;
+      border-top-left-radius: 40px;
+      border-bottom-left-radius: 40px;
+
+      font-size: 1.2rem;
+      color: black;
+
+      cursor: pointer;
+      text-decoration: none;
+      @include transition(background-color, color .3s);
+
+      &:hover, &:active {
+        color: white;
+        background-color: $light_blue;
+      }
+
+      &.a_ac {
+        color: white;
+        background-color: $light_blue;
+      }
+    }
+  }
+
+  // 右邊
+  .Right_boxs {
+    width: calc(100% - 125px);
+    height: 100%;
+    background-color: $light_gray;
+    border: 5px solid $light_blue;
+    @include border-radius(5px);
+    @include clearfix();
+    position: relative;
+
+
+    .catalog_boxs, .content_boxs {
+      display: inline-block;
+      float: left;
+    }
+
+    // 右邊：目錄
+    .catalog_boxs {
+      width: 335px;
+      height: calc(100% + 10px);
+      margin-right: 15px;
+      background-color: white;
+      position: absolute;
+      top: -5px;
+      right: 0;
+    }
+
+    // 右邊：中間
+    .content_boxs {
+      width: calc(100% - 335px - 15px);
+      height: 100%;
+      padding: 10px;
+
+      // delete
+      background-color: rgba(0, 0, 255, 0.2);
+    }
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
