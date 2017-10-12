@@ -419,6 +419,20 @@ $cent_gray: rgba(150, 150, 150, 1.00);
           }
         }
 
+        &.test_top_height {
+          height: 50px;
+
+          + * {
+            @include range-width(901px, 1291px) {
+              height: calc(100% - 50px);
+            }
+
+            @include range-width(769px, 901px) {
+              height: calc(100% - 50px);
+            }
+          }
+        } 
+
         &.im_top_height {
           height: 100px;
 
@@ -454,12 +468,16 @@ $cent_gray: rgba(150, 150, 150, 1.00);
 
           @include range-width(769px, 1291px) {
             width: 100%;
-            height: 40px;
+            height: 33px;
           }
         }
 
         .cent_top_L {
           float: left;
+
+          @include range-width(1291px, 1461px) {
+            width: 70%;
+          }
 
           &.vo_all {
             width: 100%;
@@ -485,6 +503,10 @@ $cent_gray: rgba(150, 150, 150, 1.00);
 
         .cent_top_R {
           float: right;
+
+          @include range-width(1291px, 1461px) {
+            width: 30%;
+          }
 
           &.vo_R {
             padding-top: 10px;

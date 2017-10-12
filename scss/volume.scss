@@ -30,6 +30,12 @@ $cent_gray: rgba(150, 150, 150, 1.00);
       padding-right: 10px;
       padding-top: 3px;
     }
+
+    &.test_title {
+      &:before {
+        display: none;
+      }
+    }
   }
 
   .vo_big_title {
@@ -303,51 +309,77 @@ $cent_gray: rgba(150, 150, 150, 1.00);
 
       span {
         display: inline-block;
-        font-size: 1.2rem;
+        font-size: 1rem;
         color: black;
-        padding-right: 50px;
+        padding-right: 10px;
+
+        @include range-width(769px, 1240px) {
+          font-size: 1.2rem;
+          padding-bottom: 10px;
+        }
       }
 
       .vo_link_box {
         display: inline-block;
-        width: calc(100% - 100px);
+        width: calc(100% - 70px);
         @include clearfix();
+
 
         @include range-width(769px, 1240px) {
           width: 100%;
           padding: 0;
         }
 
-        a {
+        .vo_a_box {
           display: inline-block;
-          float: left;
-          font-size: 1.2rem;
-          line-height: 30px;
-          color: black;
-          cursor: pointer;
-          text-decoration: underline;
-          @include transition(color .3s);
-          
-          @include range-width(769px, 1240px) {
-            padding-right: 10px;
+          padding-bottom: 10px;
+          margin-top: -2px;
+
+          a {
+            display: block;
+            font-size: 1.2rem;
+            line-height: 30px;
+            color: black;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: underline;
+            @include transition(color .3s);
+            
+            @include range-width(769px, 1240px) {
+              padding-right: 10px;
+            }
+
+            &:hover, &:active {
+              color: $light_blue;
+              text-decoration: underline;
+            }
+
+            &.vo_ac {
+              color: $light_blue;
+              text-decoration: underline;
+            }
           }
 
-          &:hover, &:active {
-            color: $light_blue;
-            text-decoration: underline;
-          }
+          .vo_return {
+            display: block;
+            padding: 3px 5px;
+            color: white;
+            font-size: .8rem;
+            background-color: $cent_gray;
+            cursor:pointer;
+            @include transition(all .3s);
 
-          &.vo_ac {
-            color: $light_blue;
-            text-decoration: underline;
+            &:hover, &:active, &.vo_re_ac {
+              background-color: $deep_blue;
+            }
           }
 
           &:nth-child(3n+2) {
-            padding: 0 10px;
+            padding: 0 5px;
 
             @include range-width(769px, 1240px) {
-              padding-right: 10px;
-              padding-left: 0;
+              padding-right: 8px;
+              padding-left: 8px;
             }
           }
         }
@@ -368,6 +400,10 @@ $cent_gray: rgba(150, 150, 150, 1.00);
       font-size: 1.5rem;
       color: $deep_gray;
       padding-bottom: 10px;
+
+      &.test_title {
+        font-size: 1.2rem;
+      }
     }
 
     .nine_total_boxs {
@@ -465,8 +501,6 @@ $cent_gray: rgba(150, 150, 150, 1.00);
               color: $cent_gray;
               font-size: 1.2rem;
             }
-
-
           }
 
           &.circle_icon {
@@ -492,6 +526,11 @@ $cent_gray: rgba(150, 150, 150, 1.00);
             &:before {
               color: white;
             }
+          }
+
+          &.test_ac {
+            color: $deep_gray !important;
+            box-shadow: 0px 0px 0px 2px red;   
           }
         }
 
@@ -571,9 +610,122 @@ $cent_gray: rgba(150, 150, 150, 1.00);
         }
       }
     }
-
   } 
+
+
+  .test_date_boxs {
+    display: inline-block;
+    width: 100%;
+
+    .results_title, .results_content {
+      display: inline-block;
+      width: 100%;
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+    }
+
+    .results_title { 
+      @include clearfix();
+
+      span {
+        display: inline-block;
+        color: $deep_blue;
+        font-size: 1.2rem;
+        line-height: 30px;
+
+        &:nth-child(1) {
+          float: left;
+
+          @include range-width(769px, 1241px) {
+            width: 100%;
+          }
+        }
+
+        &:nth-child(2) {
+          float: right;
+
+          @include range-width(769px, 1241px) {
+            width: 100%;
+          }
+        }
+
+        &:nth-child(3) {
+          width: 100%;
+        }
+      }
+    }
+
+    .results_content {
+      border-bottom: 1px dotted $deep_blue;
+      @include clearfix();
+      
+      span {
+        display: inline-block;
+        width: 100%;
+        color: $deep_blue;
+        font-size: 1.2rem;
+        line-height: 30px;
+
+        &:nth-child(2), &:nth-child(4) {
+          width: 50%;
+          color: $deep_gray;
+          float: left;
+
+          @include range-width(769px, 1241px) {
+            width: 100%;
+          }
+        }
+
+        &:nth-child(3), &:nth-child(5) {
+          width: 50%;
+          color: $deep_gray;
+          float: right;
+
+          @include range-width(769px, 1241px) {
+            width: 100%;
+          }
+        }
+
+        &:nth-child(5) {
+          @include range-width(769px, 1241px) {
+            width: 100%;
+          }
+          
+          p {
+            font-size: 1rem;
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+
+            &:nth-child(1) {
+              &:before {
+                display: inline-block;
+                content: '\e90a';
+                color: rgba(61, 178, 113, 1.00);
+                font-size: 1rem;
+                font-family: 'icomoon';
+              }
+            }
+
+            &:nth-child(2) {
+              &:before {
+                display: inline-block;
+                content: '\e5cd';
+                color: red;
+                font-size: 1.2rem;
+                font-family: 'icomoon';
+              }
+            }
+          }
+        }
+      }
+
+
+    }
+  }
+
 }
+
 
 
 
