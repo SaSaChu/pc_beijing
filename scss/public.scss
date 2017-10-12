@@ -120,6 +120,7 @@ $cent_gray: rgba(150, 150, 150, 1.00);
   display: inline-block;
   width: 95vw;
   height: 100vh;
+  min-height: 660px;
   margin:0 auto;
   padding: 55px 0;
   @include clearfix();
@@ -170,8 +171,8 @@ $cent_gray: rgba(150, 150, 150, 1.00);
       margin-bottom: 5px;
 
       @include range-width(769px, 1441px) {
-        height: 60px;
-        line-height: 60px;
+        height: 50px;
+        line-height: 50px;
         margin-bottom: 7px;
       }
       
