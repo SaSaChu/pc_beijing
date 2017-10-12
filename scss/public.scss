@@ -44,6 +44,9 @@
 .icon-hand:before {
   content: "\e905";
 }
+.icon-circle:before {
+  content: "\e90a";
+}
 .icon-chevron-down:before {
   content: "\e900";
 }
@@ -68,9 +71,16 @@
 .icon-plus:before {
   content: "\f05d";
 }
+.icon-square-o:before {
+  content: "\f096";
+}
+.icon-square:before {
+  content: "\f0c8";
+}
 .icon-search:before {
   content: "\e904";
 }
+
 
 
 
@@ -390,6 +400,10 @@ $cent_gray: rgba(150, 150, 150, 1.00);
         padding-right: 135px;
         @include clearfix();
 
+        &.cent_top_no {
+          padding-right: 0;
+        }
+
         + * {
           height: calc(100% - 50px);
 
@@ -405,12 +419,17 @@ $cent_gray: rgba(150, 150, 150, 1.00);
         &.im_top_height {
           height: 100px;
 
+          @include range-width(769px, 1240px) {
+            padding: 0;
+            padding-bottom: 10px;
+          }
+
           + * {
             height: calc(100% - 100px);
           }
         }
 
-        @include range-width(901px, 1240px) {
+        @include range-width(901px, 1291px) {
           height: 80px;
           padding-right: 100px;
         }
@@ -430,7 +449,7 @@ $cent_gray: rgba(150, 150, 150, 1.00);
           display: inline-block;
           width: 50%;
 
-          @include range-width(769px, 1240px) {
+          @include range-width(769px, 1291px) {
             width: 100%;
             height: 40px;
           }
@@ -463,6 +482,17 @@ $cent_gray: rgba(150, 150, 150, 1.00);
 
         .cent_top_R {
           float: right;
+
+          &.vo_R {
+            padding-top: 10px;
+            height: 40px;
+
+            @include range-width(769px, 1306px) {
+              padding-top: 5px;
+              height: 30px;
+
+            }
+          }
         }
       }
 
@@ -554,6 +584,10 @@ $cent_gray: rgba(150, 150, 150, 1.00);
                 height: 40px;
                 line-height: 40px;
                 font-size: 1.5rem;
+              }
+
+              &.gray_space {
+                padding-top: 5px;
               }
             }
 

@@ -39,11 +39,11 @@ $cent_gray: rgba(150, 150, 150, 1.00);
     color: $deep_gray;
 
     @include range-width(1100px, 1306px) {
-      font-size: 1.3rem;
+      font-size: 1.5rem;
     }
 
     @include range-width(769px, 1100px) {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
     }
   }
 }
@@ -108,6 +108,117 @@ $cent_gray: rgba(150, 150, 150, 1.00);
 
       @include range-width(769px, 1356px) {
         font-size: 1rem;
+      }
+    }
+
+    .vo_qu_boxs, .vo_an_boxs {
+      display: inline-block;
+      width: calc(100% - 26px);
+      margin: 0 15px 30px 11px;
+      text-align: left;
+    }
+
+    .vo_qu_boxs {
+      @include clearfix();
+
+      .vo_qu_box {
+        display: inline-block;
+        width: 100%;
+        padding-bottom: 25px;
+
+        .qu_L {
+          display: inline-block;
+          width: calc(100% - 120px);
+          float: left;
+          font-size: 1.5rem;
+          color: $deep_gray;
+
+          @include range-width(769px, 1551px) {
+            width: 100%;
+          }
+        }
+
+        .qu_R {
+          display: inline-block;
+          width: 120px;
+          float: right;
+          padding-left: 20px;
+
+          font-size: 1.2rem;
+          color: $deep_gray;
+
+          &:before {
+            display: inline-block;
+            content: '\f0c8';
+            font-family: 'icomoon';
+            color: $deep_blue;
+            padding: 3px 5px 0 0;
+          }
+
+          @include range-width(769px, 1551px) {
+            float: left;
+            width: 100%;
+            padding-left: 0;
+            padding-bottom: 10px;
+          }
+        }
+      }
+
+      .vo_select_boxs {
+        display: inline-block;
+        width: 100%;
+
+        .vo_select_box {
+          display: inline-block;
+          width: 100%;
+          padding: 10px;
+
+          &.vo_ok {
+            background-color: rgba(209, 254, 187, 1.00);
+            position: relative;
+
+            .vo_icon {
+              display: inline-block;
+              position: absolute;
+              top: 9;
+              right: 0;
+              width: 35px;
+              height: 30px;
+              line-height: 30px;
+              color: rgba(58, 176, 111, 1.00);
+              font-size: 1.6rem;
+            }
+          }
+
+          input {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            margin-top: 6px;
+          }
+
+          span {
+            display: inline-block;
+            width: calc(100% - 50px);
+            font-size: 1.3rem;
+            color: $deep_gray;
+          }
+        }
+      }
+
+    }
+
+    .vo_an_boxs {
+      padding: 10px 15px;
+      background-color: $light_gray;
+
+      span {
+        display: inline-block;
+        width: 100%;
+        font-size: 1.3rem;
+        color: $deep_gray;
+        line-height: 30px;
       }
     }
   }
@@ -218,30 +329,10 @@ $cent_gray: rgba(150, 150, 150, 1.00);
     }
   }
 
-  .vo_nine_table {
+  .vo_nine_boxs {
     display: inline-block;
     width: 100%;
 
-    .vo_table_boxs {
-      display: inline-block;
-      width: 100%;
-      @include clearfix();      
-
-      > div {
-        display: table-cell;
-        width: calc(100% / 11);
-        height: 25px;
-        float: left;
-        border: 1px solid rgba(255, 0, 0, .3);
-
-        &.vo_table_down {
-          font-size: 1rem;
-          display: table-cell;
-          vertical-align: bottom;
-          background-color: rgba(255, 0, 0, 0.2);
-        }
-      }
-    }
   } 
 }
 
