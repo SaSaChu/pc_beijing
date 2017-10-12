@@ -634,6 +634,49 @@ $cent_gray: rgba(150, 150, 150, 1.00);
             left: 0;
             bottom: 0;
 
+            &.test_arrow_boxs {
+              left: 0;
+              bottom: 90px;
+              cursor: pointer;
+
+              &:hover, &:active {
+                .test_boxs {
+                  background-color: $deep_blue;
+                }
+
+                span {
+                  color: $deep_blue;
+                }
+              }
+
+              .test_boxs {
+                display: inline-block;
+                width: 55px;
+                height: 55px;
+                line-height: 55px;
+                background-color: $cent_gray;
+                color: white;
+                font-size: 2rem;
+                @include transition(all .3s);
+
+                @include range-width(769px, 1356px) {
+                  width: 40px;
+                  height: 40px;
+                  line-height: 40px;
+                  font-size: 1.5rem;
+                }
+              }
+
+              span {
+                display: inline-block;
+                width: 100%;
+                font-size: 1rem;
+                color: $cent_gray;
+                padding-top: 8px;
+                @include transition(all .3s);
+              }
+            }
+           
             .arrow_box {
               display: inline-block;
               width: calc(50% - 10px / 2);
