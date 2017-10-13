@@ -205,7 +205,53 @@ $cent_gray: rgba(150, 150, 150, 1.00);
     padding: 0 15px;
   }
 
+  &.has-add {
+    margin-bottom: 16px;
+    .time_cate_box {
+      width: calc((100% - 50px * 2) / 3);
+      .time_cate {
+        background-color: rgba(255, 246, 234, 1.00);
+      }
+      &:nth-child(1), &:nth-child(2) {
+        margin-right: 50px;
+        position: relative;
 
+        &:after {
+          position: absolute;
+          right: -50px;
+          top: calc((120px - 50px) / 2);
+
+          display: inline-block;
+          width: 50px;
+          height: 50px;
+          line-height: 50px;
+          content: '\e145';
+          color: rgba(17, 89, 161, 1.00);
+          font-size: 3rem;
+          font-family: 'icomoon', Monaco, "微軟正黑體", "Microsoft JhengHei";
+        }
+        .time_cate {
+          width: 100px;
+          height: 100px;
+          .cate_all_time {
+            padding-top: 20px;
+            font-size: 2.5rem;
+            &:after {
+              font-size: 1.5rem;
+            }
+          }
+        }
+        .cate_type {
+          font-weight: normal;
+        }
+      }
+      &:nth-child(2) {
+        &:after {
+          content: '\e25d';
+        }
+      }
+    }
+  }
   .time_cate_box {
     display: inline-block;
     width: calc(100% / 3);
