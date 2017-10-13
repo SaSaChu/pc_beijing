@@ -492,8 +492,88 @@ $cent_gray: rgba(150, 150, 150, 1.00);
       .nine_table_box {
         display: inline-block;
         width: 100%;
+        &:nth-child(1) { // 第一列
+          > div {
+            &.oa1 {
+              position: relative;
+              padding-top: 4px;
+              color: rgba(228, 0, 16, 1.00);
+              &:after {
+                content: '';
+                position: absolute;
+                top: calc(50% - 30px / 2 - 4px);
+                left: calc(50% - 30px / 2);
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                border: 2px solid rgba(228, 0, 16, 1.00);
+                @include border-radius(50%);
+              }
+              &:before {
+                content: '';
+                position: absolute;
+                left: calc(50% - 3px / 2);
+                top: 33px;
+                display: inline-block;
+                width: 3px;
+                height: 11px;
+                background-color: rgba(228, 0, 16, 1.00);
+              }
+            }
+          }
+        }
+        &.last {
+          > div {
+            border: 0 !important;
+            &.oa1 {
+              position: relative;
+              overflow: visible;
+              font-size: .8rem;
+              text-align: center;
+              color: rgba(224, 0, 12, 1.00);
+              padding-top: 8px;
+              font-weight: normal;
+              &:after {
+                content: '';
+                position: absolute;
+                top: 8px;
+                left: calc(50% - 30px / 2);
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                border: 2px solid rgba(224, 0, 12, 1.00);
+                @include border-radius(50%);
+              }
+              &:before {
+                content: '';
+                position: absolute;
+                left: calc(50% - 3px / 2);
+                top: -4px;
+                display: inline-block;
+                width: 3px;
+                height: 10px;
+                background-color: rgba(224, 0, 12, 1.00);
+              }
+            }
+          }
+        }
+
         @include clearfix();
         
+        @for $i from 2 through 11 {
+          &:nth-child(#{$i}) {
+            > div {
+              &:nth-child(1) {
+                &.oa1 {
+                  &:after {
+                    content: '#{$i - 1}';
+                  }
+                }
+              }
+            }
+          }
+        }
         > div {
           display: inline-block;
           width: calc(100% / 11);
@@ -509,6 +589,37 @@ $cent_gray: rgba(150, 150, 150, 1.00);
 
           &:nth-child(1) {
             border-bottom: 0;
+            &.oa1 {
+              position: relative;
+              font-size: 0;
+              color: transparent;
+              
+              &:after {
+                content: '';
+                font-size: 1.2rem;
+                color: rgba(226, 0, 14, 1.00);
+                position: absolute;
+                left: -14px;
+                top: 0;
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                line-height: 30px - 2px * 2;
+                text-align: center;
+                border: 2px solid rgba(226, 0, 14, 1.00);
+                @include border-radius(50%);
+              }
+              &:before {
+                content: '';
+                position: absolute;
+                right: -5px;
+                top: calc(50% - 3px / 2);
+                display: inline-block;
+                width: 10px;
+                height: 3px;
+                background-color: rgba(226, 0, 14, 1.00);
+              }
+            }
           }
 
           &.mi_icon {
