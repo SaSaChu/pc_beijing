@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?tsisch');
-  src:  url('fonts/icomoon.eot?tsisch#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?tsisch') format('truetype'),
-    url('fonts/icomoon.woff?tsisch') format('woff'),
-    url('fonts/icomoon.svg?tsisch#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?87uzii');
+  src:  url('fonts/icomoon.eot?87uzii#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?87uzii') format('truetype'),
+    url('fonts/icomoon.woff?87uzii') format('woff'),
+    url('fonts/icomoon.svg?87uzii#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -59,17 +59,17 @@
 .icon-chevron-up:before {
   content: "\e903";
 }
+.icon-add:before {
+  content: "\e145";
+}
 .icon-close:before {
   content: "\e5cd";
 }
 .icon-dehaze:before {
   content: "\e3c7";
 }
-.icon-dash:before {
-  content: "\f0ca";
-}
-.icon-plus:before {
-  content: "\f05d";
+.icon-drag_handle:before {
+  content: "\e25d";
 }
 .icon-asterisk:before {
   content: "\f069";

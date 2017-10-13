@@ -1,0 +1,685 @@
+/**
+ * @author      ZEUS Design - http://www.zeusdesign.com.tw
+ * @copyright   Copyright (c) 2016 ZEUS Design
+ */
+
+@import "_oa";
+
+
+$light_blue: rgba(13, 92, 163, 1.00);
+$deep_blue: rgba(30, 49, 80, 1.00);
+$light_gray: rgba(232, 232, 232, 1.00);
+$deep_gray: rgba(73, 73, 73, 1.00);
+$cent_gray: rgba(150, 150, 150, 1.00);
+
+
+.time_title {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  color: $deep_gray;
+  font-size: 1.5rem;
+  padding: 10px 0 40px 0;
+
+  &.L_time {
+    text-align: left;
+    padding: 40px 10px 10px 10px;
+  }
+}
+
+.time_boxs {
+  display: inline-block;
+  width: 100%;
+  padding: 0 15px;
+  @include clearfix();
+
+  .time_box {
+    display: inline-block;
+    width: calc(100% / 5);
+    float: left;
+    padding-bottom: 20px;
+    height: 220px;
+
+    @include range-width(1376px, 1441px) {
+      width: calc(100% / 4);
+    }
+
+    @include range-width(1101px, 1376px) {
+      width: calc(100% / 3);
+    }
+
+    @include range-width(769px, 1101px) {
+      width: calc(100% / 2);
+    }
+
+
+    .time_d {
+      display: inline-block;
+      width: 150px;
+      height: 150px;
+      border: 5px solid rgba(13, 91, 163, 1.00);
+      margin-bottom: 10px;
+      @include border-radius(100px);
+
+      @include range-width(1441px, 1591px) {
+        width: 130px;
+        height: 130px;
+      }
+
+      @include range-width(769px, 1441px) {
+        width: 120px;
+        height: 120px;
+      }
+
+      + * {
+        height: calc(100% - 150px - 10px);
+      }
+
+      .time {
+        display: inline-block;
+        width: 100%;
+        color: rgba(199, 171, 80, 1.00);
+        font-size: 3rem;
+        line-height: 50px;
+        padding-top: 25px;
+
+        @include range-width(1441px, 1591px) {
+          padding-top: 15px;
+        }
+
+        @include range-width(769px, 1441px) {
+          padding-top: 20px;
+          line-height: 40px;
+        }
+
+       &:after {
+        display: inline-block;
+        width: 100%;
+        content: '小時';
+        color: $deep_gray;
+        font-size: 2rem;
+        font-weight: 600;
+       }
+      }
+    }
+
+    .time_type {
+      display: inline-block;
+      width: 100%;
+      font-size: 1rem;
+      color: $deep_gray;
+      padding: 0 5px;
+    }
+
+  }
+}
+
+.reciprocal {
+  display: inline-block;
+  width: 100%;
+  background-color: rgba(220, 220, 220, 1.00);
+  padding: 25px 0;
+  margin-bottom: 50px;
+
+  @include range-width(1101px, 1441px) {
+    padding: 20px 0;
+    margin-bottom: 40px;
+  }
+
+  @include range-width(769px, 1376px) {
+    padding: 20px 0;
+    margin-bottom: 30px;
+  }
+
+
+  span {
+    display: inline-block;
+    font-size: 2rem;
+    color: $deep_gray;
+    font-weight: 600;
+    line-height: 30px;
+
+    @include range-width(1101px, 1441px) {
+      font-size: 1.8rem;
+      line-height: 25px;
+    }
+
+    @include range-width(769px, 1376px) {
+      font-size: 1.5rem;
+      line-height: 20px;
+    }
+
+    &:nth-child(2) {
+      display: inline-block;
+      font-size: 3rem;
+      color: rgba(13, 92, 163, 1.00);
+      padding-left: 10px;
+
+      @include range-width(1101px, 1441px) {
+        font-size: 2rem;
+      }
+
+      @include range-width(769px, 1376px) {
+        font-size: 1.5rem;
+      }
+
+      &:after {
+        display: inline-block;
+        content: '天';
+        font-size: 2rem;
+        color: $deep_gray;
+        padding-left: 10px;
+
+        @include range-width(1101px, 1441px) {
+          font-size: 2rem;
+        }
+
+        @include range-width(769px, 1376px) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+
+.time_cate_boxs {
+  display: inline-block;
+  width: 100%;
+  padding: 0 200px;
+  margin-bottom: 30px;
+
+  @include range-width(1535px, 1750px) {
+    padding: 0 100px;
+  }
+
+  @include range-width(1226px, 1535px) {
+    padding: 0 50px;
+  }
+
+  @include range-width(1065px, 1226px) {
+    padding: 0 25px;
+  }
+
+  @include range-width(769px, 1065px) {
+    padding: 0 15px;
+  }
+
+
+  .time_cate_box {
+    display: inline-block;
+    width: calc(100% / 3);
+    float: left;
+    padding-bottom: 20px;
+
+    .time_cate {
+      display: inline-block;
+      width: 150px;
+      height: 150px;
+      border: 5px solid rgba(13, 91, 163, 1.00);
+      margin-bottom: 10px;
+      @include border-radius(100px);
+
+      @include range-width(1535px, 1750px) {
+        width: 130px;
+        height: 130px;
+      }
+
+      @include range-width(1226px, 1535px) {
+        width: 120px;
+        height: 120px;
+      }
+
+      @include range-width(1065px, 1226px) {
+        width: 110px;
+        height: 110px;
+      }
+
+      @include range-width(900px, 1065px) {
+        width: 100px;
+        height: 100px;
+      }
+
+      @include range-width(769px, 900px) {
+        width: 90px;
+        height: 90px;
+      }
+
+      .cate_all_time {
+        display: inline-block;
+        width: 100%;
+        color: rgba(199, 171, 80, 1.00);
+        font-size: 3rem;
+        line-height: 50px;
+        padding-top: 25px;
+
+        @include range-width(1535px, 1750px) {
+          font-size: 2.8rem;
+          padding-top: 20px;
+          line-height: 40px;
+        }
+
+        @include range-width(1226px, 1535px) {
+          font-size: 2.5rem;
+          padding-top: 30px;
+          line-height: 30px;
+        }
+
+        @include range-width(1065px, 1226px) {
+          font-size: 2.2rem;
+          padding-top: 25px;
+          line-height: 30px;
+        }
+
+        @include range-width(900px, 1065px) {
+          font-size: 2rem;
+          padding-top: 25px;
+          line-height: 25px;
+        }
+
+        @include range-width(769px, 900px) {
+          font-size: 2rem;
+          padding-top: 20px;
+          line-height: 25px;
+        }
+
+       &:after {
+        display: inline-block;
+        width: 100%;
+        content: '小時';
+        color: $deep_gray;
+        font-size: 2rem;
+        font-weight: 600;
+
+        @include range-width(1535px, 1750px) {
+          font-size: 1.8rem;
+        }
+
+        @include range-width(1226px, 1535px) {
+          font-size: 1.5rem;
+        }
+
+        @include range-width(1065px, 1226px) {
+          font-size: 1.2rem;
+        }
+
+        @include range-width(769px, 1065px) {
+          font-size: 1rem;
+        }
+       }
+      }
+    }
+
+    .cate_type {
+      display: inline-block;
+      width: 100%;
+      font-size: 1.5rem;
+      color: $deep_gray;
+      padding: 0 5px;
+      font-weight: 600;
+
+      @include range-width(1226px, 1535px) {
+        font-size: 1.2rem;
+      }
+
+      @include range-width(900px, 1226px) {
+        font-size: 1rem;
+      }
+
+      @include range-width(769px, 900px) {
+        font-size: .9rem;
+      }
+    }
+  }
+
+
+  .total_time_boxs {
+    display: inline-block;
+    width: 220px;
+    float: right;
+
+    @include range-width(1535px, 1750px) {
+      width: 130px;
+    }
+
+    @include range-width(1226px, 1535px) {
+      width: 120px;
+    }
+
+    @include range-width(1065px, 1226px) {
+      width: 110px;
+    }
+
+    @include range-width(900px, 1065px) {
+      width: 100px;
+    }
+
+    @include range-width(769px, 900px) {
+      width: 90px;
+    }
+
+    + * {
+      width: calc(100% - 220px);
+
+      @include range-width(1535px, 1750px) {
+        width: calc(100% - 130px);
+      }
+
+      @include range-width(1226px, 1535px) {
+        width: calc(100% - 120px);
+      }
+
+      @include range-width(1065px, 1226px) {
+        width: calc(100% - 110px);
+      }
+
+      @include range-width(900px, 1065px) {
+        width: calc(100% - 100px);
+      }
+
+      @include range-width(769px, 900px) {
+        width: calc(100% - 90px);
+      }
+    }
+
+    .total_time_box {
+      display: inline-block;
+      width: 150px;
+      height: 150px;
+      border: 5px solid rgba(13, 91, 163, 1.00);
+      margin-bottom: 10px;
+      @include border-radius(100px);
+      background-color: rgba(255, 246, 233, 1.00);
+
+      @include range-width(1535px, 1750px) {
+        width: 130px;
+        height: 130px;
+      }
+
+      @include range-width(1226px, 1535px) {
+        width: 120px;
+        height: 120px;
+      }
+
+      @include range-width(1065px, 1226px) {
+        width: 110px;
+        height: 110px;
+      }
+
+      @include range-width(900px, 1065px) {
+        width: 100px;
+        height: 100px;
+      }
+
+      @include range-width(769px, 900px) {
+        width: 90px;
+        height: 90px;
+      }
+
+      .total_time {
+        display: inline-block;
+        width: 100%;
+        color: rgba(199, 171, 80, 1.00);
+        font-size: 3rem;
+        line-height: 50px;
+        padding-top: 25px;
+
+        @include range-width(1535px, 1750px) {
+          font-size: 2.8rem;
+          padding-top: 20px;
+          line-height: 40px;
+        }
+
+        @include range-width(1226px, 1535px) {
+          font-size: 2.5rem;
+          padding-top: 30px;
+          line-height: 30px;
+        }
+
+        @include range-width(1065px, 1226px) {
+          font-size: 2.2rem;
+          padding-top: 25px;
+          line-height: 30px;
+        }
+
+        @include range-width(900px, 1065px) {
+          font-size: 2rem;
+          padding-top: 25px;
+          line-height: 25px;
+        }
+
+        @include range-width(769px, 900px) {
+          font-size: 2rem;
+          padding-top: 20px;
+          line-height: 25px;
+        }
+
+       &:after {
+        display: inline-block;
+        width: 100%;
+        content: '小時';
+        color: $deep_gray;
+        font-size: 2rem;
+        font-weight: 600;
+
+        @include range-width(1535px, 1750px) {
+          font-size: 1.8rem;
+        }
+
+        @include range-width(1226px, 1535px) {
+          font-size: 1.5rem;
+        }
+
+        @include range-width(1065px, 1226px) {
+          font-size: 1.2rem;
+        }
+
+        @include range-width(769px, 1065px) {
+          font-size: 1rem;
+        }
+       }
+      }
+    }
+
+    .total_time_type {
+      display: inline-block;
+      width: 100%;
+      font-size: 1.5rem;
+      color: $deep_gray;
+      padding: 0 5px;
+      font-weight: 600;
+
+      @include range-width(1226px, 1535px) {
+        font-size: 1.2rem;
+      }
+
+      @include range-width(900px, 1226px) {
+        font-size: 1rem;
+      }
+
+      @include range-width(769px, 900px) {
+        font-size: .9rem;
+      }
+    }
+  }
+
+  .total_catel_boxs {
+    display: inline-block;
+    float: left;
+    @include clearfix();
+
+    .total_catel_box {
+      display: inline-block;
+      width: 50%;
+      float: left;
+
+      .total_catel {
+        display: inline-block;
+        width: 100%;
+        position: relative;
+        padding-right: 50px;
+
+        .total {
+          display: inline-block;
+          width: 120px;
+          height: 120px;
+          border: 5px solid rgba(13, 91, 163, 1.00);
+          background-color: rgba(255, 246, 233, 1.00);
+          margin-bottom: 10px;
+          @include border-radius(60px);
+
+          @include range-width(1535px, 1750px) {
+            width: 110px;
+            height: 110px;
+          }
+
+          @include range-width(1226px, 1535px) {
+            width: 100px;
+            height: 100px;
+          }
+
+          @include range-width(1065px, 1226px) {
+            width: 95px;
+            height: 95px;
+          }
+
+          @include range-width(900px, 1065px) {
+            width: 90px;
+            height: 90px;
+          }
+
+          @include range-width(769px, 900px) {
+            width: 85px;
+            height: 85px;
+          }
+
+          .total_sub {
+            width: 100%;
+            color: rgba(199, 171, 80, 1.00);
+            font-size: 3rem;
+            line-height: 40px;
+            padding-top: 20px;
+
+            @include range-width(1535px, 1750px) {
+              font-size: 2.8rem;
+              padding-top: 20px;
+              line-height: 40px;
+            }
+
+            @include range-width(1226px, 1535px) {
+              font-size: 2.5rem;
+              padding-top: 20px;
+              line-height: 30px;
+            }
+
+            @include range-width(1065px, 1226px) {
+              font-size: 2.2rem;
+              padding-top: 20px;
+              line-height: 25px;
+            }
+
+            @include range-width(900px, 1065px) {
+              font-size: 2rem;
+              padding-top: 20px;
+              line-height: 25px;
+            }
+
+            @include range-width(769px, 900px) {
+              font-size: 2rem;
+              padding-top: 20px;
+              line-height: 25px;
+            }
+
+           &:after {
+            display: inline-block;
+            width: 100%;
+            content: '小時';
+            color: $deep_gray;
+            font-size: 2rem;
+            font-weight: 600;
+
+            @include range-width(1535px, 1750px) {
+              font-size: 1.8rem;
+            }
+
+            @include range-width(1226px, 1535px) {
+              font-size: 1.5rem;
+            }
+
+            @include range-width(1065px, 1226px) {
+              font-size: 1.2rem;
+            }
+
+            @include range-width(769px, 1065px) {
+              font-size: 1rem;
+            }
+           }           
+          }
+        }
+
+        &:after {
+          display: inline-block;
+          content: '\e145';
+          font-family: 'icomoon';
+          font-size: 3rem;
+          color: rgba(15, 81, 153, 1.00);
+          position: absolute;
+          top: 30px;
+          right: 7px;
+        }
+
+        &.icon_two {
+          &:after {
+            display: inline-block;
+            content: '\e25d';
+            font-family: 'icomoon';
+            font-size: 3rem;
+            color: rgba(15, 81, 153, 1.00);
+            position: absolute;
+            top: 30px;
+            right: 7px;
+          }
+        }
+
+        .total_catel_type {
+          display: inline-block;
+          width: 100%;
+          font-size: 1rem;
+          color: $deep_gray;
+          padding: 0 5px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

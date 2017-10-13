@@ -105,6 +105,7 @@ $cent_gray: rgba(150, 150, 150, 1.00);
 
 .cent_down_L {
   .im_Lbg {
+
     .vo_type {
       display: inline-block;
       width: 100%;
@@ -116,6 +117,32 @@ $cent_gray: rgba(150, 150, 150, 1.00);
         font-size: 1rem;
       }
     }
+
+    .an_type_boxs {
+      padding: 0 15px;
+      @include transition(all .3s);
+      
+      span {
+        display: inline-block;
+        width: 100%;
+        font-size: 1.2rem;
+        color: black;
+        text-align: left;
+        padding-bottom: 30px;
+
+        @include range-width(769px, 1356px) {
+          font-size: 1rem;
+        }
+      }
+
+      img {
+        display: inline-block;
+        max-width: 100%;
+        width: 100%; 
+        margin-bottom: 30px;
+      }
+    }
+
 
     .vo_qu_boxs, .vo_an_boxs {
       display: inline-block;

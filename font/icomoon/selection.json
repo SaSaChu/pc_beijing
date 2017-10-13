@@ -299,6 +299,33 @@
     {
       "icon": {
         "paths": [
+          "M810 554h-256v256h-84v-256h-256v-84h256v-256h84v256h256v84z"
+        ],
+        "attrs": [],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "tags": [
+          "add"
+        ],
+        "defaultCode": 57669,
+        "grid": 24
+      },
+      "attrs": [],
+      "properties": {
+        "ligatures": "add",
+        "id": 12,
+        "order": 43,
+        "prevSize": 24,
+        "code": 57669,
+        "name": "add"
+      },
+      "setIdx": 16,
+      "setId": 9,
+      "iconIdx": 12
+    },
+    {
+      "icon": {
+        "paths": [
           "M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
         ],
         "attrs": [],
@@ -353,56 +380,29 @@
     {
       "icon": {
         "paths": [
-          "M0 448v128h512v-128h-512z"
+          "M170 640v-86h684v86h-684zM854 384v86h-684v-86h684z"
         ],
-        "width": 512,
         "attrs": [],
         "isMulticolor": false,
         "isMulticolor2": false,
         "tags": [
-          "dash"
+          "drag_handle"
         ],
-        "defaultCode": 61642,
-        "grid": 16
+        "defaultCode": 57949,
+        "grid": 24
       },
       "attrs": [],
       "properties": {
-        "id": 38,
-        "order": 19,
-        "prevSize": 32,
-        "code": 61642,
-        "name": "dash"
+        "ligatures": "drag_handle",
+        "id": 237,
+        "order": 41,
+        "prevSize": 24,
+        "code": 57949,
+        "name": "drag_handle"
       },
-      "setIdx": 13,
-      "setId": 12,
-      "iconIdx": 37
-    },
-    {
-      "icon": {
-        "paths": [
-          "M384 448v-256h-128v256h-256v128h256v256h128v-256h256v-128h-256z"
-        ],
-        "width": 640,
-        "attrs": [],
-        "isMulticolor": false,
-        "isMulticolor2": false,
-        "tags": [
-          "plus"
-        ],
-        "defaultCode": 61533,
-        "grid": 16
-      },
-      "attrs": [],
-      "properties": {
-        "id": 132,
-        "order": 18,
-        "prevSize": 32,
-        "code": 61533,
-        "name": "plus"
-      },
-      "setIdx": 13,
-      "setId": 12,
-      "iconIdx": 131
+      "setIdx": 16,
+      "setId": 9,
+      "iconIdx": 237
     },
     {
       "icon": {

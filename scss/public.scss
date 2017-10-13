@@ -59,20 +59,20 @@
 .icon-chevron-up:before {
   content: "\e903";
 }
+.icon-add:before {
+  content: "\e145";
+}
 .icon-close:before {
   content: "\e5cd";
 }
 .icon-dehaze:before {
   content: "\e3c7";
 }
+.icon-drag_handle:before {
+  content: "\e25d";
+}
 .icon-asterisk:before {
   content: "\f069";
-}
-.icon-dash:before {
-  content: "\f0ca";
-}
-.icon-plus:before {
-  content: "\f05d";
 }
 .icon-square-o:before {
   content: "\f096";
@@ -312,6 +312,10 @@ $cent_gray: rgba(150, 150, 150, 1.00);
               height: 15px;
               float: left;
               border-left: 1px solid $deep_blue;
+
+              &.gu_height {
+                height: 30px;
+              }
             }
 
             .ca_list_boxs {
