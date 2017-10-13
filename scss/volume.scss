@@ -100,6 +100,18 @@ $cent_gray: rgba(150, 150, 150, 1.00);
     &.vo_ac {
       background-color: $deep_blue;
     }
+
+    &.book_all_btn {
+      background-color: white;
+      color: $deep_blue;
+      font-size: 1.8rem;
+      @include transition(all .3s);
+
+      &:hover, &:active {
+        color: rgba(30, 49, 80, .8);
+        background-color: rgba(255, 255, 255, .7);
+      }
+    }
   }
 }
 

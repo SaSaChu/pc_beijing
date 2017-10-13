@@ -29,6 +29,9 @@
 }
 
 
+.icon-big:before {
+  content: "\e90b";
+}
 .icon-an:before {
   content: "\e908";
 }
@@ -71,6 +74,9 @@
 .icon-drag_handle:before {
   content: "\e25d";
 }
+.icon-remove:before {
+  content: "\e15b";
+}
 .icon-asterisk:before {
   content: "\f069";
 }
@@ -83,6 +89,7 @@
 .icon-search:before {
   content: "\e904";
 }
+
 
 
 
@@ -306,6 +313,65 @@ $cent_gray: rgba(150, 150, 150, 1.00);
               padding-left: 15px;
             }
 
+            &.gu_date_boxs {
+              position: relative;
+              padding-left: 55px;
+              margin-top: -6px;
+
+              @include range-width(901px, 1240px) {
+                padding-left: 45px;
+              }
+
+              @include range-width(769px, 901px) {
+                padding-left: 35px;
+              }
+
+              .ca_list_boxs {
+                &:nth-child(2) {
+                  &:before {
+                    display: inline-block;
+                    content: '';
+                    height: 19px;
+                    margin-top: 19px;
+                    border-left: 1px solid $deep_blue;
+                  }
+                }
+
+                &:last-child {
+                  &:before {
+                    display: inline-block;
+                    content: '';
+                    height: 16px;
+                    border-left: 1px solid $deep_blue;
+                  }
+                }
+              }
+
+              .out_list_boxs {
+                position: absolute;
+                top: 6px;
+                left: 19px;
+                display: inline-block;
+                width: 25px;
+                height: 25px;
+                line-height: 25px;
+                font-size: 1rem;
+                background-color: $deep_blue;
+                color: white;
+                @include transition(all .3s);
+                
+
+                &:after {
+                  position: absolute;
+                  display: inline-block;
+                  content: '─';
+                  color:$deep_blue;
+                  top: 0;
+                  right: -12px;
+                }
+              }
+            }
+
             .ca_list_span {
               display: inline-block;
               width: 100%;
@@ -369,6 +435,24 @@ $cent_gray: rgba(150, 150, 150, 1.00);
 
                 &.ca_ac {
                   color: $deep_blue;
+                }
+
+                &.gu_ac {
+                  font-weight: 600;
+                  color: $deep_blue;
+
+                  &:before {
+                    font-weight: 200;
+                  }
+                }
+
+                &.gu_d {
+                  font-size: 1rem;
+                  color: rgba(13, 92, 164, 1.00);
+
+                   &:before {
+                    margin-right: 8px;
+                  }
                 }
               }
             }
@@ -520,8 +604,11 @@ $cent_gray: rgba(150, 150, 150, 1.00);
             @include range-width(769px, 1306px) {
               padding-top: 5px;
               height: 30px;
-
             }
+          }
+
+          &.book_R {
+            padding-right: 135px;
           }
         }
       }
