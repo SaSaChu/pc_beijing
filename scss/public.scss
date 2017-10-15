@@ -535,6 +535,14 @@ $cent_gray: rgba(150, 150, 150, 1.00);
           }
         }
 
+        &.book_top_height {
+          height: 120px;
+
+          + * {
+            height: calc(100% - 120px);
+          }
+        }
+
         @include range-width(901px, 1291px) {
           height: 80px;
           padding-right: 100px;
