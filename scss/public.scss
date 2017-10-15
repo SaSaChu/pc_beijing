@@ -468,6 +468,10 @@ $cent_gray: rgba(150, 150, 150, 1.00);
       height: 100%;
       padding: 10px;
 
+      &.open_all_btn {
+        width: 100%;
+      }
+
       &.no_pa {
         padding: 0;
       }
