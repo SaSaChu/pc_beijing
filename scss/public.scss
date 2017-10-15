@@ -29,6 +29,15 @@
 }
 
 
+.icon-fa:before {
+  content: "\e90c";
+}
+.icon-ok:before {
+  content: "\e90d";
+}
+.icon-sa:before {
+  content: "\e90e";
+}
 .icon-big:before {
   content: "\e90b";
 }
@@ -79,6 +88,9 @@
 }
 .icon-asterisk:before {
   content: "\f069";
+}
+.icon-star:before {
+  content: "\f005";
 }
 .icon-square-o:before {
   content: "\f096";

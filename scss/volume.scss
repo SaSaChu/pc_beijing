@@ -115,6 +115,8 @@ $cent_gray: rgba(150, 150, 150, 1.00);
 }
 
 .cent_down_L {
+  position: relative;
+
   .im_Lbg {
 
     .vo_type {
@@ -130,9 +132,10 @@ $cent_gray: rgba(150, 150, 150, 1.00);
     }
 
     .an_type_boxs {
-      padding: 0 15px;
+      padding: 5px 15px;
       @include transition(all .3s);
-      
+
+
       span {
         display: inline-block;
         width: 100%;

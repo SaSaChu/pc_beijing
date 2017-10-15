@@ -34,13 +34,14 @@
 }
 .tree-box {
   overflow-y: auto;
-  height: 100%;
+  
   &.has-path {
-    height: calc(100% - 40px);
+    height: calc(100% - 40px - 190px);
   }
 }
+
 @mixin tree-set ($h) {
-  .icon-asterisk {
+  .icon-star {
     position: absolute;
     right: 0;
     top: 0;
@@ -58,7 +59,7 @@
       width: $h;
       height: $h;
       line-height: $h;
-      color: rgba(30, 47, 78, 1.00);
+      color: rgba(13, 91, 163, 1.00);
       @include scale(1.5);
     }
     &:after {
@@ -67,12 +68,12 @@
       left: 0;
       top: 0;
       display: inline-block;
-      width: $h;
+      width: 30px;
       height: $h;
       line-height: $h;
       text-align: center;
-      content: white;
-      font-size: 12px;
+      color: white;
+      font-size: .7rem;
     }
     
     + .title {

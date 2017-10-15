@@ -39,6 +39,18 @@ $cent_gray: rgba(150, 150, 150, 1.00);
     }
   }
 
+  &.bt_rc_span {
+    padding-right: 135px;
+    padding-top: 10px;
+
+    @include range-width(769px, 1250px) {
+      padding-right: 0;
+      padding-top: 15px;
+    }
+
+   
+  }
+
   .book_time_title {
     float: left;
     display: inline-block;
@@ -87,6 +99,18 @@ $cent_gray: rgba(150, 150, 150, 1.00);
       @include range-width(769px, 1015px) {
         width: calc(100% - 150px);
       }
+
+      &.have_star {
+        width: calc(100% - 150px - 265px);
+
+        @include range-width(1015px, 1310px) {
+          width: calc(100% - 150px - 200px);
+        }
+
+        @include range-width(769px, 1015px) {
+          width: calc(100% - 150px - 100px);
+        }
+      }
     }
   }
 
@@ -105,7 +129,7 @@ $cent_gray: rgba(150, 150, 150, 1.00);
       font-weight: 600;
     }
 
-    .book_run_btn{
+    .book_run_btn {
       display: inline-block;
       cursor: pointer;
       width: 45px;
@@ -122,9 +146,46 @@ $cent_gray: rgba(150, 150, 150, 1.00);
         background-color: $deep_blue;
       }
     }
+  }
 
-    // delete
-    background-color: rgba(255, 0, 0, 0.2);
+  .star_boxs {
+    display: inline-block;
+    width: 215px;
+    float: left;
+    padding: 0 10px;
+    @include clearfix();
+
+    @include range-width(1015px, 1310px) {
+      width: 150px;
+    }
+
+    @include range-width(769px, 1015px) {
+      width: 100px;
+      padding: 0 5px;
+    }
+
+    > div {
+      display: inline-block;
+      cursor: pointer;
+      width: calc(100% / 5);
+      height: 45px;
+      line-height: 45px;
+      float: left;
+      color: rgba(160, 160, 160, 1.00);
+      font-size: 1.5rem;
+
+      &:hover, &:active, &.star_y {
+        color: rgba(255, 206, 4, 1.00);
+      }
+
+      @include range-width(1015px, 1310px) {
+        font-size: 1.3rem;    
+      }
+
+      @include range-width(769px, 1015px) {
+        font-size: 1rem; 
+      }
+    }
   }
 
 
@@ -134,6 +195,27 @@ $cent_gray: rgba(150, 150, 150, 1.00);
 
     font-size: 1.5rem;
     color: $deep_gray;
+
+    b {
+      display: inline-block;
+      font-size: 1.2rem;
+      margin: 0 5px;  
+      width: 30px;
+      height: 30px;
+      line-height: 30px;    
+
+      &.b01 {
+        color: red;
+      }
+
+      &.b02 {
+        color: rgba(255, 206, 4, 1.00);
+      }
+
+      &.b03 {
+        color: rgba(44, 168, 97, 1.00);
+      }
+    }
 
     @include range-width(1160px, 1240px) {
       font-size: 1.5rem;
@@ -152,12 +234,15 @@ $cent_gray: rgba(150, 150, 150, 1.00);
     display: inline-block;
     float: right;
 
+    &:nth-child(2) {
+      padding-left: 10px;
+    }
+
     span {
       display: inline-block;
       font-size: 1.2rem;
       color: $deep_gray;
       line-height: 30px;
-      float: right;
 
       @include range-width(769px, 1356px) {
         font-size: 1rem;
@@ -204,6 +289,43 @@ $cent_gray: rgba(150, 150, 150, 1.00);
         &:hover, &:active {
           color: rgba(30, 49, 80, .8);
           background-color: rgba(255, 255, 255, .7);
+        }
+      }
+    }
+
+    .mark_boxs {
+      display: inline-block;
+      width: 120px;
+      line-height: 30px;
+      height: 30px;
+      border: 1px solid $cent_gray;
+      margin-left: 15px;
+      padding: 5px;
+      @include clearfix();
+
+      > div {
+        display: inline-block;
+        width: calc(100% / 3);
+        float: left;
+        color: $cent_gray;
+
+        &.i01 {
+          &:hover, &:active, &.i01_ok {
+            color: red;
+          }
+        }
+
+        &.i02 {
+          &:hover, &:active, &.i02_ok {
+            color: rgba(255, 206, 4, 1.00);
+          }
+        }
+
+        &.i03 {
+
+          &:hover, &:active, &.i03_ok {
+            color: rgba(44, 168, 97, 1.00);
+          }
         }
       }
     }
@@ -259,8 +381,133 @@ $cent_gray: rgba(150, 150, 150, 1.00);
       }
     }
   }
-
 }
+
+
+.book_fan_boxs {
+  display: inline-block;
+  width: 100%;
+  padding: 16px;
+
+  + * {
+    height: calc(100% - 190px);
+  }
+
+  .book_fan_box {
+    display: inline-block;
+    width: 100%;
+    @include clearfix();
+
+    &:first-child {
+      padding-bottom: 15px;
+    }
+
+    > div {
+      display: inline-block;
+      width: calc(100% / 9);
+      height: 35px;
+      line-height: 35px;
+      float: left;
+      font-size: 1.2rem;
+      color: white;
+      background-color: $cent_gray;
+      border-top: 1px solid white;
+      border-bottom: 1px solid white;
+
+      @include range-width(769px, 925px) {
+        font-size: 1rem;
+      }
+
+      &.bbb {
+        border-left:  1px solid white;
+      }
+
+      &.c00 {
+        background-color: white;
+      }
+
+      &.c01 {
+        background-color: rgba(233, 97, 29, 1.00);
+      }
+      &.c02 {
+        background-color: rgba(44, 170, 63, 1.00);
+      }
+      &.c03 {
+        background-color: rgba(233, 105, 121, 1.00);
+      }
+      &.c04 {
+        background-color: rgba(8, 73, 154, 1.00);
+      }
+      &.c05 {
+        background-color: rgba(240, 157, 160, 1.00);
+      }
+      &.c06 {
+        background-color: rgba(23, 157, 149, 1.00);
+      }
+      &.c07 {
+        background-color: rgba(26, 161, 230, 1.00);
+      }
+      &.c08 {
+        background-color: rgba(199, 171, 80, 1.00);
+      }
+
+      &.bf_ac {
+        border: 2px solid red;
+      } 
+    }
+  }
+}
+
+
+.book_tag {
+  display: inline-block;
+  width: 100%;
+  position: absolute;
+  top: -12px;
+  left: 0;
+  @include clearfix();
+  
+  @include range-width(769px, 1350px) {
+    top: -7px;
+  }
+
+  > div {
+    display: inline-block;
+    float: left;
+    cursor: pointer;
+    @include border-radius(30px);
+    padding: 2px 10px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: $cent_gray;
+    margin: 0 10px;
+    @include transition(all .3s);
+
+    &:hover, &:active, &.tag_ok {
+      background-color: $deep_blue;
+    }
+
+    @include range-width(769px, 1350px) {
+      font-size: .9rem;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

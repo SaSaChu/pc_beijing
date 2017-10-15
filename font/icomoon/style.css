@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?c3n12q');
-  src:  url('fonts/icomoon.eot?c3n12q#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?c3n12q') format('truetype'),
-    url('fonts/icomoon.woff?c3n12q') format('woff'),
-    url('fonts/icomoon.svg?c3n12q#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?ge260v');
+  src:  url('fonts/icomoon.eot?ge260v#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?ge260v') format('truetype'),
+    url('fonts/icomoon.woff?ge260v') format('woff'),
+    url('fonts/icomoon.svg?ge260v#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-fa:before {
+  content: "\e90c";
+  color: #a0a0a0;
+}
+.icon-ok:before {
+  content: "\e90d";
+  color: #e60012;
+}
+.icon-sa:before {
+  content: "\e90e";
+  color: #a0a0a0;
+}
 .icon-big:before {
   content: "\e90b";
   color: #1d3051;
@@ -80,6 +92,9 @@
 }
 .icon-asterisk:before {
   content: "\f069";
+}
+.icon-star:before {
+  content: "\f005";
 }
 .icon-square-o:before {
   content: "\f096";
