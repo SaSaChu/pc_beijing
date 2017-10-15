@@ -5,129 +5,248 @@
 
 @import "_oa";
 
-.tree {
-  display: block;
+.path {
+  position: absolute;
+  bottom: 0;
+  right: 15px;
+  z-index: 10;
+  display: inline-block;
+  width: 481px;
+  height: 40px;
+  line-height: 40px - 2px;
   text-align: left;
-  > div {
+  padding: 0 16px;
+  background-color: rgba(255, 255, 255, 1.00);
+  border-top: 2px solid rgba(229, 229, 229, 1.00);
+
+  @include range-width(901px, 1240px) {
+    width: 406px;
+  }
+
+  @include range-width(769px, 901px) {
+    width: 336px;
+  }
+}
+.cent_down_R {
+  &.has-path {
+    height: calc(100% - 40px) !important;
+  }
+}
+.tree-box {
+  overflow-y: auto;
+  height: 100%;
+  &.has-path {
+    height: calc(100% - 40px);
+  }
+}
+@mixin tree-set ($h) {
+  .icon-asterisk {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: inline-block;
+    width: 30px;
+    height: $h;
+    text-align: center;
+    color: white;
+    
+    &:before {
+      position: absolute;
+      left: calc(50% - #{$h / 2});
+      top: calc(50% - #{$h / 2});
+      display: inline-block;
+      width: $h;
+      height: $h;
+      line-height: $h;
+      color: rgba(30, 47, 78, 1.00);
+      @include scale(1.5);
+    }
+    &:after {
+      position: absolute;
+      content: attr(data-cnt);
+      left: 0;
+      top: 0;
+      display: inline-block;
+      width: $h;
+      height: $h;
+      line-height: $h;
+      text-align: center;
+      content: white;
+      font-size: 12px;
+    }
+    
+    + .title {
+      padding-right: 30px;
+    }
+  }
+  .main {
     position: relative;
     display: inline-block;
     width: 100%;
-  }
+    padding-left: $h - 10px + 12px;
+    height: $h;
+    line-height: $h;
 
-  .main {
-    margin-top: 16px;
-    padding-left: 8px;
-    height: 35px;
-    line-height: 35px;
-    @include clearfix();
-    &:last-child {
-      &:before {
-        height: calc(100%);
-      }
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: $h / 2 - 2px / 2;
+      display: inline-block;
+      height: 2px;
+      width: $h - 10px + 8px;
+      background-color: rgba(160, 160, 160, 1.00);
     }
     &:before {
       content: '';
       position: absolute;
-      top: -(16px + 8px);
-      left: 8px + 35px / 2 - 2px / 2;
+      top: 0;
+      left: ($h - 10px) / 2;
       display: inline-block;
-      height: calc(100% + 16px + 8px);
+      height: 100%;
       width: 2px;
       background-color: rgba(29, 47, 80, 1.00);
     }
-    &:after {
-      content: '';
-      position: absolute;
-      left: 8px + 35px / 2 - 2px / 2;
-      top: 35px / 2 - 2px / 2;
-      display: inline-block;
-      height: 2px;
-      width: 16px + 35px / 2;
-      background-color: rgba(160, 160, 160, 1.00);
+    &:first-child {
+      &:before {
+        top: 5px;
+        height: calc(100% - 5px);
+      }
     }
+    &:last-child {
+      &:before {
+        height: 16px;
+      }
+    }
+
     > * {
-      float: left;
       display: inline-block;
-      height: 35px;
-      line-height: 35px;
+      height: $h;
+      line-height: $h;
     }
     > .icon-add {
-      position: relative;
+      cursor: pointer;
+      position: absolute;
+      left: 0;
+      top: 5px;
       z-index: 1;
       display: inline-block;
-      width: 35px - 10px;
-      margin-top: 5px;
-      height: 35px - 10px;
-      line-height: 35px - 10px;
-      margin-left: 5px;
+      width: $h - 10px;
+      height: $h - 10px;
+      line-height: $h - 10px;
       text-align: center;
       background-color: rgba(160, 160, 160, 1.00);
-      // border: 1px solid rgba(255, 0, 0, .3);
       color: white;
     }
     > .title {
-      width: calc(100% - 35px);
-      padding-left: 16px + 12px;
+      width: 100%;
+      @include overflow-docx3();
     }
-
-    > .sub {
+    > .sub, > .main {
       display: none;
     }
     &.show {
       height: auto;
       > .icon-add {
+        cursor: pointer;
         background-color: rgba(29, 47, 79, 1.00);
         &:before {
           content: '\e15b';
         }
       }
-      &:after {
-        background-color: rgba(29, 47, 80, 1.00);
-      }
-     .sub {
+      > .sub, > .main {
         display: inline-block;
         width: 100%;
         height: auto;
-
-        > span {
+      }
+      > .sub {
+        > div:not(.main) {
           position: relative;
           display: inline-block;
           width: 100%;
-          height: 35px;
-          line-height: 35px;
-          padding-left: 16px + 35px + 4px;
+          height: $h;
+          line-height: $h;
+          padding-left: 24px;
           color: rgba(7, 88, 164, 1.00);
           
           &:last-child {
             &:before {
-              height: 100%;
+              height: 50%;
             }
           }
           &:before {
             content: '';
             position: absolute;
-            top: -(16px + 2px);
-            left: 37px;
+            top: 0;
+            left: 9px;
             display: inline-block;
-            height: calc(100% + 16px + 8px);
+            height: 100%;
             width: 2px;
             background-color: rgba(29, 47, 80, 1.00);
           }
           &:after {
             content: '';
             position: absolute;
-            left: 37px;
-            top: 35px / 2 - 2px / 2;
+            left: 9px;
+            top: $h / 2 - 2px / 2;
             display: inline-block;
             height: 2px;
             width: 12px;
             background-color: rgba(29, 47, 79, 1.00);
           }
+
+          > .title {
+            display: inline-block;
+            width: 100%;
+            height: $h;
+            line-height: $h;
+            @include overflow-docx3();
+          }
         }
       }
     }
   }
-  // .main.show {
-  //   
-  // }
+}
+.tree {
+  display: block;
+  text-align: left;
+  padding: 0 16px;
+  +.tree {
+    margin-top: 16px;
+  }
+
+  &.tree-gu {
+    @include tree-set(36px);
+    > .main {
+      &:first-child {
+        &:before {
+          top: 0;
+          height: 100%;
+        }
+      }
+    }
+  }
+  @include tree-set(28px);  
+  h3 {
+    position: relative;
+    color: rgba(29, 47, 80, 1.00);
+    text-align: left;
+    display: inline-block;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    margin: 0;
+
+    .title {
+      display: inline-block;
+      width: 100%;
+      @include overflow-docx3();
+    }
+    + .main {
+      &:before {
+        top: 5px;
+        height: calc(100% - 5px);
+      }
+    }
+  }
 }
