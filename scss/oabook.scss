@@ -4,3 +4,128 @@
  */
 
 @import "_oa";
+
+.tree {
+  display: block;
+  text-align: left;
+  > div {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .main {
+    margin-top: 16px;
+    padding-left: 8px;
+    height: 35px;
+    line-height: 35px;
+    @include clearfix();
+    &:last-child {
+      &:before {
+        height: calc(100%);
+      }
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      top: -(16px + 8px);
+      left: 8px + 35px / 2 - 2px / 2;
+      display: inline-block;
+      height: calc(100% + 16px + 8px);
+      width: 2px;
+      background-color: rgba(29, 47, 80, 1.00);
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      left: 8px + 35px / 2 - 2px / 2;
+      top: 35px / 2 - 2px / 2;
+      display: inline-block;
+      height: 2px;
+      width: 16px + 35px / 2;
+      background-color: rgba(160, 160, 160, 1.00);
+    }
+    > * {
+      float: left;
+      display: inline-block;
+      height: 35px;
+      line-height: 35px;
+    }
+    > .icon-add {
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+      width: 35px - 10px;
+      margin-top: 5px;
+      height: 35px - 10px;
+      line-height: 35px - 10px;
+      margin-left: 5px;
+      text-align: center;
+      background-color: rgba(160, 160, 160, 1.00);
+      // border: 1px solid rgba(255, 0, 0, .3);
+      color: white;
+    }
+    > .title {
+      width: calc(100% - 35px);
+      padding-left: 16px + 12px;
+    }
+
+    > .sub {
+      display: none;
+    }
+    &.show {
+      height: auto;
+      > .icon-add {
+        background-color: rgba(29, 47, 79, 1.00);
+        &:before {
+          content: '\e15b';
+        }
+      }
+      &:after {
+        background-color: rgba(29, 47, 80, 1.00);
+      }
+     .sub {
+        display: inline-block;
+        width: 100%;
+        height: auto;
+
+        > span {
+          position: relative;
+          display: inline-block;
+          width: 100%;
+          height: 35px;
+          line-height: 35px;
+          padding-left: 16px + 35px + 4px;
+          &:last-child {
+            &:before {
+              height: 100%;
+            }
+          }
+          &:before {
+            content: '';
+            position: absolute;
+            top: -(16px + 2px);
+            left: 37px;
+            display: inline-block;
+            height: calc(100% + 16px + 8px);
+            width: 2px;
+            background-color: rgba(29, 47, 80, 1.00);
+          }
+          &:after {
+            content: '';
+            position: absolute;
+            left: 37px;
+            top: 35px / 2 - 2px / 2;
+            display: inline-block;
+            height: 2px;
+            width: 12px;
+            background-color: rgba(29, 47, 79, 1.00);
+          }
+        }
+      }
+    }
+  }
+  // .main.show {
+  //   
+  // }
+}
