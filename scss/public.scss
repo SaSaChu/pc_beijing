@@ -536,10 +536,10 @@ $cent_gray: rgba(150, 150, 150, 1.00);
         }
 
         &.book_top_height {
-          height: 120px;
+          height: 110px;
 
           + * {
-            height: calc(100% - 120px);
+            height: calc(100% - 110px);
           }
         }
 
@@ -650,6 +650,9 @@ $cent_gray: rgba(150, 150, 150, 1.00);
             background-color: white;
             overflow-y: scroll; 
             padding: 15px 10px; 
+
+            @include clearfix();
+            
           }
         }
 

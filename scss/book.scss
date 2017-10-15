@@ -21,6 +21,22 @@ $cent_gray: rgba(150, 150, 150, 1.00);
 
   &.bt_r_span {
     padding-right: 135px;
+    padding-top: 10px;
+
+    @include range-width(1160px, 1240px) {
+      padding-right: 100px;
+      padding-top: 15px;
+    }
+
+    @include range-width(1015px, 1160px) {
+      padding-right: 110px;
+      padding-top: 15px;
+    }
+
+    @include range-width(769px, 1015px) {
+      padding-right: 0;
+      padding-top: 15px;
+    }
   }
 
   .book_time_title {
@@ -29,33 +45,49 @@ $cent_gray: rgba(150, 150, 150, 1.00);
     width: 200px;
     @include clearfix();
     text-align: left;
-    
+
+    @include range-width(769px, 1015px) {
+      width: 150px;
+    }
+
     .bt_icon {
       display: inline-block;
-      width: 40px;
-      height: 40px;
-      line-height: 40px;
-      font-size: 3rem;
+      width: 45px;
+      height: 45px;
+      line-height: 45px;
+      font-size: 2.5rem;
       color: $deep_gray;
-      padding-right: 10px;
+      margin-right: 10px;
       float: left;
+
+      @include range-width(769px, 1015px) {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 2rem;
+      }
     }
 
     span {
       display: inline-block;
-      width: calc(100% - 40px);
+      width: calc(100% - 45px - 10px);
       font-size: 1rem;
       color: $deep_gray;
       float: left;
+
+
+      @include range-width(769px, 1015px) {
+        font-size: .9rem;
+      }
     }
-    
 
     + * {
       width: calc(100% - 200px);
-    }
 
-    // delete
-    background-color: rgba(0, 128, 0, 0.2);
+      @include range-width(769px, 1015px) {
+        width: calc(100% - 150px);
+      }
+    }
   }
 
   .book_run_boxs {
@@ -100,16 +132,20 @@ $cent_gray: rgba(150, 150, 150, 1.00);
     display: inline-block;
     float: left;
 
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: $deep_gray;
 
-    @include range-width(769px, 1356px) {
-      font-size: 1rem;
-      line-height: 25px;
+    @include range-width(1160px, 1240px) {
+      font-size: 1.5rem;
     }
 
-    // delete
-    border: 1px solid rgba(255, 0, 0, .3);
+    @include range-width(800px, 1160px) {
+      font-size: 1.3rem;
+    }
+
+    @include range-width(769px, 800px) {
+      font-size: 1.2rem;
+    }
   }
 
   .book_btn_boxs {
@@ -171,14 +207,60 @@ $cent_gray: rgba(150, 150, 150, 1.00);
         }
       }
     }
-
-    // delete
-    border: 1px solid rgba(255, 0, 0, .3);
   }
 }
 
 
+.book_catalog_boxs {
+  display: inline-block;
+  width: 100%;
 
+  .book_catalog_box {
+    display: inline-block;
+    width: 50%;
+    float: left;
+    text-align: left;
+    padding-bottom: 30px;
+
+    @include range-width(769px, 1160px) {
+      width: 100%;
+    }
+
+    // delete
+    // border: 1px solid rgba(255, 0, 0, .3);
+
+    span, p {
+      display: inline-block;
+      width: 100%;
+      color: $deep_gray;
+    }
+
+    span {
+      font-size: 1.5rem;
+
+      @include range-width(769px, 1355px) {
+        font-size: 1.3rem;
+      }
+    }
+
+    p {
+      padding: 3px 0; 
+      margin: 0;
+      font-size: 1.2rem;
+      padding-right: 50px;
+
+      @include range-width(1160px, 1355px) {
+        font-size: 1rem;
+        padding-right: 30px;
+      }
+
+      @include range-width(769px, 1160px) {
+        padding-right: 0;
+      }
+    }
+  }
+
+}
 
 
 
