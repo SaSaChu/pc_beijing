@@ -29,6 +29,13 @@
 }
 
 
+
+.icon-ban:before {
+  content: "\e90f";
+}
+.icon-pqu:before {
+  content: "\e910";
+}
 .icon-fa:before {
   content: "\e90c";
 }
@@ -101,7 +108,6 @@
 .icon-search:before {
   content: "\e904";
 }
-
 
 
 
@@ -704,7 +710,12 @@ $cent_gray: rgba(150, 150, 150, 1.00);
 
             &.gray_ac {
               .gray_boxs {
+                font-size: 1.2rem;
                 background-color: $deep_blue;
+
+                @include range-width(769px, 1300px) {
+                  font-size: 1rem;
+                }
               }
 
               span {

@@ -494,10 +494,222 @@ $cent_gray: rgba(150, 150, 150, 1.00);
 }
 
 
+.book_other_boxs {
+  display: inline-block;
+  width: 100%;
+  @include clearfix();
+  padding-bottom: 40px;
+
+  
+  .other_title {
+    display: inline-block;
+    float: left;
+
+    font-size: 1.5rem;
+    color: $deep_gray;
+
+    &:before {
+      display: inline-block;
+      content: '\e910';
+      font-family: 'icomoon';
+      color: rgba(199, 171, 80, 1.00);
+      font-size: 1.5rem; 
+      padding: 3px 10px 0 0;
+    }
+  }
+
+  .other_name {
+    display: inline-block;
+    float: right;
+    font-size: 1.5rem;
+    color: $deep_blue;
+
+    &:before {
+      display: inline-block;
+      content: '会员：';
+      font-size: 1.5rem;
+      color: $deep_blue;
+    }
+  }
+
+  .other_table_title {
+    display: inline-block;
+    font-size: 1.2rem;
+    color: $deep_gray;
+    float: left;
+    padding-bottom: 10px;
+
+    &:before {
+      display: inline-block;
+      content: '*';
+      color: red;
+      font-size: .9rem;
+      padding: 6px 5px 0 0;
+    }
+  }
+
+  textarea {
+    display: inline-block;
+    width: 100%;
+    height: 485px;
+    background-color: $light_gray;
+    border: 0;
+    font-size: 1.2rem;
+    color: $deep_gray;
+    padding: 10px;
+  }
+
+  .code_boxs {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 0;
+    @include clearfix();
+
+    .code_box {
+      display: inline-block;
+      float: left;
+      width: calc(100% - 410px);
+      @include clearfix();
+
+      @include range-width(1260px, 1500px) {
+        width: calc(100% - 310px);
+      }
+      @include range-width(769px, 1260px) {
+        width: 100%;
+        padding-bottom: 10px;
+      }
+      
+      p {
+        display: inline-block;
+        float: left;
+        padding: 12px 10px 12px 0;
+        margin: 0;
+        font-size: 1.2rem;
+        color: $deep_gray;
+
+        @include range-width(769px, 1500px) {
+          font-size: 1rem;
+        }
+      }
+
+      input {
+        display: inline-block;
+        width: calc(100% - 80px);
+        padding: 12px;
+        background-color: $light_gray;
+        font-size: 1.2rem;
+        color: $cent_gray;
+        border: 0;
+        outline: 0;
+        float: left;
+
+        @include range-width(1260px, 1500px) {
+          width: calc(100% - 70px);
+          font-size: 1rem;
+        }
+
+        @include range-width(769px, 1260px) {
+          width: calc(100% - 60px);
+        }
+      }
+    }
+
+    .code_show {
+      display: inline-block;
+      float: left;
+      width: 200px;
+      background-color: rgba(229, 229, 229, 1.00);
+      font-size: 1.2rem;
+      color: $cent_gray;
+      padding: 12px;
+
+      @include range-width(1260px, 1500px) {
+        width: 150px;
+        font-size: 1rem;
+      }
+
+      @include range-width(1040px, 1260px) {
+        width: 50%;
+      }
+
+      @include range-width(769px, 1040px) {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+
+    .code_return {
+      display: inline-block;
+      cursor: pointer;
+      float: left;
+      width: 200px;
+      margin-left: 10px;
+      background-color: rgba(199, 171, 80, 1.00);
+      padding: 10px;
+      color: white;
+      font-size: 1.2rem;
+      @include transition(all .3s);
+      border: 0;
+      outline: 0;
+
+      &:hover, &:active {
+        background-color: rgba(199, 171, 80, .9);
+      }
+
+      @include range-width(1260px, 1500px) {
+        width: 150px;
+        font-size: 1rem;
+      }
+
+      @include range-width(1040px, 1260px) {
+        width: calc(50% - 10px);
+      }
+
+      @include range-width(769px, 1040px) {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+.other_btn_boxs {
+  display: inline-block;
+  width: 100%;
+
+  button {
+    display: inline-block;
+    padding: 10px 50px;
+    color: white;
+    font-size: 1.2rem;
+    margin-left: 20px;
+    border: 0;
+    outline: 0;
+    float: right;
+    background-color: $deep_blue;
+    @include transition(all .3s);
+    
+    &:hover, &:active {
+      background-color: $light_blue;
+    }
+
+    @include range-width(769px, 1260px) {
+      width: calc(50% - 20px / 2);
+      font-size: 1rem;
+      padding: 10px 20px;
 
 
-
-
+      &:nth-child(1) {
+        float: right;
+        margin-left: 0;
+      }
+      &:nth-child(2) {
+        float: left;
+        margin-left: 0;
+      }
+    }
+  }
+}
 
 
 
