@@ -500,13 +500,27 @@ $cent_gray: rgba(150, 150, 150, 1.00);
   @include clearfix();
   padding-bottom: 40px;
 
-  
+  &.an_pad {
+    padding-bottom: 10px;
+  }
+
   .other_title {
     display: inline-block;
     float: left;
 
     font-size: 1.5rem;
     color: $deep_gray;
+
+    &.other_an {
+      &:before {
+        display: inline-block;
+        content: '\e90f';
+        font-family: 'icomoon';
+        color: rgba(199, 171, 80, 1.00);
+        font-size: 1.5rem; 
+        padding: 3px 10px 0 0;
+      }
+    }
 
     &:before {
       display: inline-block;
@@ -668,6 +682,63 @@ $cent_gray: rgba(150, 150, 150, 1.00);
       @include range-width(769px, 1040px) {
         width: 100%;
         margin-left: 0;
+      }
+    }
+  }
+
+  .an_boxs {
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+
+    .an_box, .an_cent {
+      display: inline-block;
+      width: 100%;
+      color: $deep_gray;
+    }
+
+    .an_box {
+      cursor: pointer;
+      font-size: 1.2rem;
+      background-color: rgba(211, 241, 254, 1.00);
+      padding: 5px 10px;
+
+      &:after {
+        cursor: pointer;
+        display: inline-block;
+        content: '\e15b';
+        font-family: 'icomoon';
+        color: $deep_blue;
+        font-size: 1.5rem;
+        float: right;
+      }
+
+      &.an_gray {
+        background-color: rgba(236, 235, 235, 1.00);
+
+        &:after {
+          cursor: pointer;
+          display: inline-block;
+          content: '\e145';
+          font-family: 'icomoon';
+          color: $deep_blue;
+          font-size: 1.5rem;
+          float: right;
+        }
+      }
+    }
+
+    .an_cent {
+      padding: 5px 10px;
+      font-size: 1.2rem;
+      padding-bottom: 40px;
+
+      &:before {
+        display: inline-block;
+        content: ' A：';
+        font-size: 1.2rem;
+        color: $deep_gray;
       }
     }
   }
