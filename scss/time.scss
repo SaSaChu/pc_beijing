@@ -376,12 +376,12 @@ $cent_gray: rgba(150, 150, 150, 1.00);
       padding: 0 5px;
       font-weight: 600;
 
-      @include range-width(1226px, 1535px) {
+      @include range-width(1241px, 1535px) {
         font-size: 1.2rem;
       }
 
-      @include range-width(900px, 1226px) {
-        font-size: 1rem;
+      @include range-width(900px, 1241px) {
+        font-size: .9rem;
       }
 
       @include range-width(769px, 900px) {

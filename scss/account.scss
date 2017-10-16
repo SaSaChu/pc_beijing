@@ -177,6 +177,18 @@ $cent_gray: rgba(150, 150, 150, 1.00);
       &:hover, &:active {
         background-color: $light_blue;
       }
+
+      @include range-width(1146px, 1441px) {
+        font-size: 1rem;
+        height: 40px;
+        line-height: 40px;
+      }
+
+      @include range-width(769px, 1146px) {
+        font-size: 1rem;
+        height: 20px;
+        line-height: 20px;
+      }
     }
 
     button {
