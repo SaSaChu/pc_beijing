@@ -36,6 +36,16 @@ $cent_gray: rgba(150, 150, 150, 1.00);
         display: none;
       }
     }
+
+    &.testing {
+      &:before {
+        display: inline-block;
+        content: '\e91b';
+        font-family: 'icomoon';
+        padding-right: 10px;
+        padding-top: 3px;
+      }
+    }
   }
 
   .vo_big_title {
@@ -217,6 +227,23 @@ $cent_gray: rgba(150, 150, 150, 1.00);
 
     .vo_qu_boxs {
       @include clearfix();
+      @include clearfix();
+      
+      .ing_mark {
+        display: inline-block;
+        float: right;
+        color: $deep_gray;
+        font-size: 1.2rem;
+        padding-bottom: 60px;
+
+        input {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          line-height: 20px;
+          margin-top: 6px;
+        }
+      }
 
       .vo_qu_box {
         display: inline-block;
@@ -231,6 +258,10 @@ $cent_gray: rgba(150, 150, 150, 1.00);
           color: $deep_gray;
 
           @include range-width(769px, 1551px) {
+            width: 100%;
+          }
+
+          &.qu_ing {
             width: 100%;
           }
         }
@@ -322,6 +353,7 @@ $cent_gray: rgba(150, 150, 150, 1.00);
           color: white;
           background-color: $deep_blue;
           @include transition(all .3s);
+          margin-left: 10px;
 
           &:hover, &:active {
             background-color: $light_blue;
@@ -329,6 +361,28 @@ $cent_gray: rgba(150, 150, 150, 1.00);
 
           @include range-width(769px, 1111px) {
             width: 100%;
+          }
+
+          &.test_arrow {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            font-size: 2rem;
+            background-color: $cent_gray;
+
+            @include range-width(769px, 1111px) {
+              width: calc(50% - 10px);
+              margin-top: 10px;
+
+              &:nth-child(3) {
+                margin-left: 0;
+                float: left;
+              }
+            }
+
+            &:hover, &:active {
+              background-color: $light_blue;
+            }
           }
         }
       }
@@ -705,6 +759,11 @@ $cent_gray: rgba(150, 150, 150, 1.00);
             }
           }
 
+          &.bgred {
+            display: inline-block;
+            background-color: rgba(228, 11, 33, .3);
+          }
+
           &.circle_icon {
             &:before {
               display: inline-block;
@@ -733,6 +792,11 @@ $cent_gray: rgba(150, 150, 150, 1.00);
           &.test_ac {
             color: $deep_gray !important;
             box-shadow: 0px 0px 0px 2px red;   
+          }
+
+          &.test_q {
+            color: red !important;
+            box-shadow: 0px 0px 0px 2px red;  
           }
         }
 
@@ -921,8 +985,33 @@ $cent_gray: rgba(150, 150, 150, 1.00);
           }
         }
       }
+    }
 
 
+    .ing_title, .ing_date, .ing_name, .ing_con {
+      display: inline-block;
+      width: 100%;
+      padding-bottom: 10px;
+
+    }
+
+    .ing_title {
+      font-size: 4rem;
+      color: red;
+    }
+    .ing_date {
+      font-size: 1.2rem;
+      color: red;
+    }
+    .ing_name {
+      font-size: 2rem;
+      color: $deep_blue;
+      font-weight: 600;
+    }
+    .ing_con {
+      font-size: 1.2rem;
+      color: $deep_gray;
+      border-bottom: 1px solid $deep_gray;
     }
   }
 

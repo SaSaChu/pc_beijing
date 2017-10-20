@@ -30,6 +30,72 @@
 
 
 
+.icon-add:before {
+  content: "\e145";
+}
+.icon-close:before {
+  content: "\e5cd";
+}
+.icon-dehaze:before {
+  content: "\e3c7";
+}
+.icon-drag_handle:before {
+  content: "\e25d";
+}
+.icon-remove:before {
+  content: "\e15b";
+}
+.icon-circle:before {
+  content: "\e90a";
+}
+.icon-chevron-down:before {
+  content: "\e900";
+}
+.icon-chevron-left:before {
+  content: "\e901";
+}
+.icon-chevron-right:before {
+  content: "\e902";
+}
+.icon-chevron-up:before {
+  content: "\e903";
+}
+.icon-clock:before {
+  content: "\e91b";
+}
+.icon-po:before {
+  content: "\e91c";
+}
+.icon-icon01:before {
+  content: "\e913";
+}
+.icon-icon02:before {
+  content: "\e914";
+}
+.icon-icon03:before {
+  content: "\e915";
+}
+.icon-icon04:before {
+  content: "\e916";
+}
+.icon-icon05:before {
+  content: "\e917";
+}
+.icon-icon06:before {
+  content: "\e918";
+}
+.icon-icon07:before {
+  content: "\e919";
+}
+.icon-icon08:before {
+  content: "\e91a";
+}
+.icon-timeL:before {
+  content: "\e911";
+}
+.icon-timeR:before {
+  content: "\e912";
+}
 .icon-ban:before {
   content: "\e90f";
 }
@@ -63,35 +129,11 @@
 .icon-hand:before {
   content: "\e905";
 }
-.icon-circle:before {
-  content: "\e90a";
+.icon-play:before {
+  content: "\e91d";
 }
-.icon-chevron-down:before {
-  content: "\e900";
-}
-.icon-chevron-left:before {
-  content: "\e901";
-}
-.icon-chevron-right:before {
-  content: "\e902";
-}
-.icon-chevron-up:before {
-  content: "\e903";
-}
-.icon-add:before {
-  content: "\e145";
-}
-.icon-close:before {
-  content: "\e5cd";
-}
-.icon-dehaze:before {
-  content: "\e3c7";
-}
-.icon-drag_handle:before {
-  content: "\e25d";
-}
-.icon-remove:before {
-  content: "\e15b";
+.icon-pause:before {
+  content: "\e91e";
 }
 .icon-asterisk:before {
   content: "\f069";
@@ -108,6 +150,7 @@
 .icon-search:before {
   content: "\e904";
 }
+
 
 
 
@@ -140,6 +183,7 @@ $deep_gray: rgba(73, 73, 73, 1.00);
 $cent_gray: rgba(150, 150, 150, 1.00);
 
 
+
 // 最外圈的div
 #out_boxs {
   display: inline-block;
@@ -149,6 +193,91 @@ $cent_gray: rgba(150, 150, 150, 1.00);
   margin:0 auto;
   padding: 55px 0;
   @include clearfix();
+  position: relative;
+
+  .black_bg {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, .7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1500;
+
+    .wo_boxs {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width: 100%;
+      height: 100%;
+
+      .wo_box {
+        width:350px;
+        background:white;
+        @include border-radius(3px);
+        text-align: left;
+        padding: 30px 30px;
+        @include clearfix();
+        position: relative;
+
+        .wo_close {
+          position: absolute;
+          top: -10px;
+          right: -10px;
+          display: inline-block;
+          width: 25px;
+          height: 25px;
+          text-align: center;
+          background-color: black;
+          color: white;
+          font-size: 1rem;
+          @include border-radius(20px);
+          border: 1px solid white;
+          outline: 0;
+          padding: 0;
+        }
+
+        .wo_icon {
+          display: inline-block;
+          color: white;
+          background-color: red;
+          font-size: 2rem;
+          padding-top: 10px;
+          width: 55px;
+          height: 55px;
+          line-height: 35px;
+          text-align: center;
+          @include border-radius(30px);
+          float: left;
+          margin-right: 10px;
+        }
+
+        .wo_type {
+          display: inline-block;
+          width: calc(100% - 65px);
+          color: $deep_gray;
+          font-size: 1.2rem;
+          float: left;
+
+          // &:before {
+          //   display: inline-block;
+          //   content: '\e91c';
+          //   font-family: 'icomoon';
+          //   color: white;
+          //   background-color: red;
+          //   font-size: 1.5rem;
+          //   width: 55px;
+          //   height: 55px;
+          //   line-height: 35px;
+          //   text-align: center;
+          //   @include border-radius(20px);
+          //   margin-right: 10px;
+          // }
+        }
+      }
+    }
+  }
 
   .Left_boxs, .Right_boxs {
     display: inline-block;
@@ -806,6 +935,22 @@ $cent_gray: rgba(150, 150, 150, 1.00);
                 @include transition(all .3s);
               }
             }
+
+            button {
+              display: inline-block;
+              cursor: pointer;
+              width: 100%;
+              height: 55px;
+              color: white;
+              font-size: 1.5rem;
+              background-color: $cent_gray;
+              border: 0;
+              outline: 0;
+
+              &:hover, &:active {
+                background-color: rgba(13, 91, 163, 1.00);
+              }
+            }
            
             .arrow_box {
               display: inline-block;
@@ -821,6 +966,14 @@ $cent_gray: rgba(150, 150, 150, 1.00);
                 height: 40px;
                 line-height: 40px;
                 font-size: 2rem;
+              }
+
+              &.testicon {
+                font-size: 1.5rem;
+
+                @include range-width(769px, 1356px) {
+                  font-size: 1rem;
+                }
               }
               
               &:hover, &:active {
